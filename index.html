@@ -1,75 +1,278 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#080a10"><meta name="color-scheme" content="dark light"><title>Ravrent Interactive — Games & Software</title>
-<meta name="description" content="An independent studio building automotive software, games, simulations and navigation experiences. Discover Ravrent Mechanic, Outmile, Motor Dynasty, Block Frontier and Life OS.">
-<meta property="og:title" content="Ravrent Interactive — Games & Software"><meta property="og:type" content="website"><meta property="og:description" content="Independent games, simulations and software. Five projects, one studio."><meta property="og:url" content="https://ravrentinteractive.vercel.app/"><link rel="canonical" href="https://ravrentinteractive.vercel.app/"><link rel="icon" type="image/svg+xml" href="/icon.svg">
-<style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;--blue:#2997ff;--pale:#f5f5f7;--ink:#1d1d1f;color:var(--ink);font-synthesis:none}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:58px}body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{cursor:pointer;font:inherit}svg{height:19px;width:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}a:focus-visible,button:focus-visible{outline:2px solid #58aaff;outline-offset:3px}::selection{color:#131820;background:#b2d7fd}.defs{position:absolute;width:0;height:0;overflow:hidden}.shell{width:min(calc(100% - 66px),1160px);margin-inline:auto}.skip{position:fixed;top:-70px;left:10px;padding:12px;background:white;z-index:100}.skip:focus{top:10px}
-.global-nav{height:56px;position:sticky;top:0;z-index:60;background:#0b0d12ed;color:#f3f4f7;border-bottom:1px solid #ffffff1a;backdrop-filter:blur(17px)}.nav-in{height:100%;width:min(calc(100% - 55px),1110px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand{display:flex;gap:10px;align-items:center;line-height:1}.brand-icon{height:30px;width:30px;border:1.8px solid #eef2f5;display:grid;place-items:center;position:relative;letter-spacing:-.13em;font-size:24px;font-weight:900;padding-right:4px}.brand-icon em{position:absolute;right:0;bottom:0;color:#b2d7fd;font-style:normal;font-size:16px}.brand-text{font-weight:850;font-size:11px;letter-spacing:.12em}.brand-text small{display:block;font-size:6px;letter-spacing:.35em;margin-top:5px;color:#97a7b9}.navigation{display:flex;align-items:center;gap:39px;margin-left:auto;margin-right:auto}.navigation a{font-size:12px;color:#b3bac4;transition:color .2s}.navigation a:hover{color:white}.nav-right{display:flex;align-items:center;gap:18px}.nav-right>span{font-size:9px;letter-spacing:.12em;color:#8d98a6}.nav-cta{border-radius:40px;border:1px solid #ffffff52;padding:9px 14px;display:inline-flex;align-items:center;gap:8px;font-size:11px}.nav-cta svg{width:13px}.nav-cta:hover{background:#ffffff18}.hamburger{display:none;background:transparent;color:white;border:1px solid #ffffff53;height:37px;width:37px;place-items:center;border-radius:9px}.mobile-nav[hidden]{display:none}.mobile-nav{position:absolute;top:56px;left:0;right:0;background:#121923;padding:15px 25px 25px;display:flex;flex-direction:column;box-shadow:0 22px 50px #0009}.mobile-nav a{padding:16px 0;border-bottom:1px solid #ffffff21;display:flex;justify-content:space-between;font-size:14px;font-weight:700}
-.intro{min-height:min(820px,calc(100svh - 56px));background:radial-gradient(ellipse at 50% 53%,#15253a,#080d18 45%,#04060a 83%);color:#f4f6f9;position:relative;overflow:hidden;isolation:isolate;display:grid;place-items:center}.orbital{position:absolute;inset:0;height:100%;width:100%;pointer-events:none;opacity:.95}.intro-inner{position:relative;z-index:2;text-align:center;max-width:950px;margin:85px 20px 95px}.intro-kicker{font-size:10px;letter-spacing:.16em;color:#a4b8cc;font-weight:800}.intro h1{font-size:clamp(78px,10.8vw,151px);line-height:.94;letter-spacing:-.085em;font-weight:750;margin:30px 0 26px}.intro h1 span{background:linear-gradient(90deg,#e7f1ff,#9ebddd,#748ca5);background-clip:text;-webkit-background-clip:text;color:transparent}.intro p{font-size:18px;line-height:1.65;color:#b7c5d2;margin:0 auto 29px;max-width:530px}.blue-button{display:inline-flex;align-items:center;justify-content:center;gap:11px;border:0;background:#0071e3;color:#fff;border-radius:32px;padding:12px 22px;font-size:13px;font-weight:700;transition:background .2s,transform .2s}.blue-button:hover{background:#2997ff;transform:translateY(-2px)}.blue-button svg{height:16px;width:16px}.intro-floor{position:absolute;left:5%;right:5%;bottom:25px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.15em;color:#839cb2;font-weight:800}
-.announcement{background:#f4f4f6;padding:18px 0}.announce-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:12px;color:#59616a;text-align:center}.announce-tag{font-size:9px;font-weight:850;letter-spacing:.1em;background:#e2ebf5;color:#41627f;border-radius:30px;padding:7px 10px}.announce-row a{color:#0066cc;display:flex;align-items:center;gap:5px}.announce-row svg{width:13px}.section-title{text-align:center;max-width:700px;margin:0 auto 58px}.eyebrow{font-size:10px;font-weight:850;letter-spacing:.16em;color:#87929e}.section-title h2{font-size:clamp(49px,6.2vw,80px);letter-spacing:-.065em;line-height:1.04;margin:17px 0 21px;font-weight:745}.section-title h2 span{color:#8d98a5}.section-title p{font-size:15px;line-height:1.7;color:#777f89;margin:0}.index-section{background:#fff;padding:115px 0 130px}.project-index{border-top:1px solid #d7dce1}.index-row{display:grid;grid-template-columns:50px 1fr 155px 22px;align-items:center;gap:15px;padding:26px 14px;border-bottom:1px solid #d7dce1;transition:background .2s}.index-row:hover{background:#f6f7f9}.index-no{font-size:12px;color:#99a2ad;font-weight:750}.index-row strong{font-size:26px;font-weight:745;letter-spacing:-.045em}.index-row small{display:block;font-size:10px;letter-spacing:.11em;font-weight:750;color:#959fab;margin-top:6px}.index-status{text-align:right;font-size:10px;font-weight:760;letter-spacing:.07em;color:#8593a1}.index-row svg{width:17px;color:#627f96}
-.feature{position:relative;overflow:hidden;isolation:isolate}.feature-copy{max-width:740px;margin:0 auto;text-align:center;position:relative;z-index:3;padding:105px 20px 10px}.feature-over{font-size:10px;letter-spacing:.14em;font-weight:840;color:#90a6bc}.feature-copy h2{font-size:clamp(66px,8vw,114px);font-weight:760;letter-spacing:-.073em;line-height:.97;margin:23px 0}.feature-copy h2 span{color:#9db8d6}.feature-copy p{font-size:17px;line-height:1.69;color:#b6c2cf;max-width:640px;margin:0 auto}.feature-actions{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:28px 0}.quiet-link{font-size:13px;color:#80c1ff;display:inline-flex;align-items:center;gap:8px}.quiet-link svg{width:15px}.quiet-link:hover{text-decoration:underline}.status-chip{font-size:10px;color:#a7c1d5;letter-spacing:.1em;font-weight:850}.feature-dark{background:radial-gradient(ellipse at 50% 58%,#143553 0%,#0c1829 41%,#040a11 85%);color:white}.feature-dark .feature-copy p{color:#aec1d1}.mechanic-showcase{height:610px;max-width:1080px;margin:10px auto 0;position:relative;display:grid;place-items:center;perspective:1000px}.mechanic-halo{position:absolute;left:calc(50% - 330px);top:10px;width:660px;height:660px;border-radius:50%;border:1px solid #a1c6e52c;box-shadow:0 0 0 80px #a1c6e50a,0 0 0 160px #a1c6e504}.phone{height:545px;width:277px;position:absolute;background:linear-gradient(145deg,#151e2b,#090d15);border:6px solid #3c4e60;border-radius:44px;box-shadow:0 30px 70px #0009,inset 0 0 0 2px #cad4db55;overflow:hidden}.front-phone{z-index:3;left:calc(50% - 109px);top:20px;transform:rotate(6deg);animation:floatfront 8s ease-in-out infinite}.back-phone{left:calc(50% - 283px);top:55px;transform:rotate(-16deg) scale(.95);z-index:1;background:radial-gradient(ellipse at 48% 47%,#4e7289,#13253b 60%,#081522)}.island{position:absolute;top:12px;left:calc(50% - 42px);width:84px;height:22px;border-radius:30px;background:#020308;z-index:3}.phone-screen{padding:46px 15px 18px;height:100%;display:flex;flex-direction:column}.screen-nav{display:flex;align-items:center;justify-content:space-between;color:#bac8d5;font-size:9px;letter-spacing:.1em;font-weight:790}.screen-nav b{font-size:20px;letter-spacing:-.1em;color:#f5f7fa}.screen-nav b span{color:#8cc2f0}.screen-main{flex:1;padding:66px 7px 0}.screen-main .screen-label{font-size:8px;font-weight:850;letter-spacing:.09em;color:#8eb3d4;border:1px solid #294c69;background:#132d43;border-radius:20px;padding:8px 10px}.screen-main h3{font-size:31px;letter-spacing:-.06em;line-height:1.04;margin:22px 0 13px}.screen-main p{font-size:12px;line-height:1.6;color:#abbccd}.screen-items{border:1px solid #314052;border-radius:14px;margin-top:25px;overflow:hidden}.screen-items div{display:flex;align-items:center;gap:10px;padding:14px 12px;border-bottom:1px solid #314052;font-size:11px;color:#d6e3f0}.screen-items div:last-child{border-bottom:0}.screen-items svg{height:15px;width:15px;color:#8cbbdf}.screen-compose{display:flex;justify-content:space-between;align-items:center;border-radius:40px;background:#1e2d3e;border:1px solid #41566a;font-size:11px;color:#9db0be;padding:14px}.back-phone .dial{height:280px;width:280px;border:1px solid #90b4d878;border-radius:50%;position:absolute;top:110px;left:0;box-shadow:0 0 0 40px #aac7e013,0 0 0 75px #aac7e009}.back-phone .car-graphic{position:absolute;left:6%;right:6%;top:42%;height:90px;border-radius:60% 70% 15px 15px;background:linear-gradient(#bed5e3,#547c97 47%,#263e52);border:2px solid #e1f3fd;box-shadow:0 15px 20px #020c15a8}.back-phone .car-graphic:before{content:'';position:absolute;left:26%;top:-45px;width:53%;height:63px;border:4px solid #bad5e2;background:#20405b;clip-path:polygon(0 100%,20% 0,77% 0,100% 100%)}.back-phone .car-graphic:after{content:'';position:absolute;left:7%;right:7%;bottom:-17px;height:29px;background:linear-gradient(90deg,#09131e 9%,transparent 9% 78%,#09131e 78%);border-radius:30px}.fine-caption{position:absolute;right:14px;bottom:30px;font-size:9px;color:#88a0b6;letter-spacing:.1em}.feature-details{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:25px 0 70px;border-top:1px solid #ffffff23;max-width:1120px;margin:0 auto}.feature-details div{display:flex;flex-direction:column;gap:7px}.feature-details b{font-size:10px;letter-spacing:.1em;color:#dae7f0}.feature-details span{font-size:12px;color:#8b9db0}
-.outmile-section{background:linear-gradient(180deg,#eaf0ec,#dae8dd 90%);color:#152922;padding-bottom:105px}.outmile-section .feature-over{color:#57806d}.outmile-section .feature-copy h2 span{color:#6b9981}.outmile-section .feature-copy p{color:#5d796e}.outmile-section .quiet-link{color:#1f7051}.outmile-section .blue-button{background:#205d44}.map-frame{position:relative;height:540px;width:min(calc(100% - 60px),1120px);border:1px solid #d5ddd5;border-radius:27px;overflow:hidden;background:#c5d3ba;margin:58px auto 0;box-shadow:0 24px 60px #21452c35}.map-frame canvas{height:100%;width:100%;display:block}.map-ui{position:absolute;inset:0;display:flex;justify-content:space-between;flex-direction:column;pointer-events:none;padding:23px}.map-top,.map-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}.map-label{background:#f8faf4e8;backdrop-filter:blur(12px);color:#295344;padding:13px 18px;border-radius:32px;font-size:10px;letter-spacing:.09em;font-weight:800}.route-buttons{display:flex;gap:5px;background:#f7f9f1e8;padding:5px;border-radius:40px;pointer-events:auto}.route-buttons button{background:none;border:0;border-radius:30px;padding:11px 15px;font-size:11px;font-weight:780;color:#4d7c68}.route-buttons button.active{background:#225b45;color:#fff}.motion-btn{pointer-events:auto;height:42px;width:42px;border-radius:50%;border:0;background:#f4f8f1ea;color:#1e5842;display:grid;place-items:center}.map-note{text-align:center;font-size:11px;color:#668678;line-height:1.6;padding:20px 15px 0}
-.motor-section{background:radial-gradient(ellipse at 50% 70%,#293c4d,#111a25 50%,#070b11 87%);color:#fff;padding-bottom:90px}.motor-scene{position:relative;width:min(calc(100% - 45px),1080px);height:525px;margin:52px auto 0;border-top:1px solid #ffffff20;border-bottom:1px solid #ffffff20;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 85%,#91abc125,transparent 60%)}.motor-scene:before{content:'MOTOR';position:absolute;font-size:clamp(145px,19vw,290px);font-weight:900;color:#e9f3fb0b;letter-spacing:-.12em;top:22%;left:50%;transform:translateX(-50%)}.motor-body{position:absolute;top:44%;left:11%;width:78%;height:130px;border-radius:52% 49% 16px 16px;border-top:3px solid #e5f5ff;background:linear-gradient(180deg,#d5e9f5 0,#6990aa 25%,#284b65 65%,#0e2438);box-shadow:0 42px 30px #02080ebc}.motor-body:before{content:'';position:absolute;left:19%;right:18%;top:-76px;height:93px;background:linear-gradient(180deg,#8cacbe,#24435a);clip-path:polygon(0 100%,17% 0,76% 0,100% 100%);border:2px solid #b4ccd9}.wheel{position:absolute;top:61%;width:200px;aspect-ratio:1;border:25px solid #142636;border-radius:50%;background:repeating-conic-gradient(#b6cbd5 0deg 11deg,#41586a 13deg 32deg,#b6cbd5 35deg 47deg,#41586a 51deg 60deg);box-shadow:0 0 0 5px #829cab,0 25px 25px #03080e9e}.wheel:after{content:'';position:absolute;inset:36%;border-radius:50%;background:#a8c7d8;border:5px solid #475f6e}.wheel.one{left:22%}.wheel.two{right:19%}.scene-caption{position:absolute;right:12px;bottom:12px;color:#99adbe;font-size:9px;letter-spacing:.11em}
-.two-up{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#fff;padding:12px}.mini-feature{height:730px;position:relative;color:#fff;overflow:hidden;isolation:isolate}.mini-feature.block{background:radial-gradient(ellipse at 45% 75%,#4e7960,#233b31 55%,#081610 95%)}.mini-feature.life{background:radial-gradient(ellipse at 50% 75%,#67728e,#282f47 55%,#0c101b 95%)}.mini-top{display:flex;justify-content:space-between;gap:10px;padding:26px 28px;font-size:9px;letter-spacing:.14em;color:#d5dfdb;font-weight:800}.mini-copy{position:relative;z-index:4;text-align:center;padding:36px 25px 0}.mini-copy h2{font-size:clamp(72px,7vw,105px);line-height:.9;letter-spacing:-.078em;margin:0 0 22px}.mini-copy p{font-size:14px;line-height:1.67;color:#cbd5d1;max-width:360px;margin:0 auto 20px}.mini-copy button,.mini-copy a{font-size:12px;background:none;border:0;color:#b8dffd;padding:8px;display:inline-flex;align-items:center;gap:7px}.mini-copy button:hover,.mini-copy a:hover{text-decoration:underline}.mini-copy svg{width:13px}.cubes{position:absolute;left:0;right:0;bottom:60px;height:270px}.cube{position:absolute;width:190px;height:190px;transform:rotate(45deg) skew(-10deg,-10deg);background:linear-gradient(130deg,#c3d8b8,#85ae94);box-shadow:34px 34px #375b46,-28px -28px #749b7d;border:2px solid #b5d9c07d}.cube:nth-child(1){left:35%;top:0}.cube:nth-child(2){left:7%;top:104px;width:130px;height:130px;background:#769f86}.cube:nth-child(3){right:10%;top:130px;width:140px;height:140px;background:#709984}.city{position:absolute;left:11%;right:11%;bottom:-40px;height:390px;display:flex;align-items:end;gap:10px;transform:perspective(520px) rotateX(9deg)}.city i{flex:1;height:var(--h);border-top:3px solid #d1dcf065;background:linear-gradient(90deg,#9eadc7,#69758e 35%,#323a58);box-shadow:14px 17px 13px #101526a1}.city i:nth-child(1){--h:42%}.city i:nth-child(2){--h:74%}.city i:nth-child(3){--h:96%}.city i:nth-child(4){--h:65%}.city i:nth-child(5){--h:86%}.city i:nth-child(6){--h:55%}.city i:nth-child(7){--h:72%}.mini-caption{position:absolute;right:20px;bottom:15px;font-size:9px;letter-spacing:.1em;color:#b8c7d0}
-.about{padding:120px 0;background:#f6f6f7}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:65px}.about h2{font-size:clamp(57px,6vw,85px);line-height:1.02;letter-spacing:-.065em;margin:20px 0}.about h2 span{color:#8995a0}.about-text{padding-top:38px;font-size:16px;line-height:1.8;color:#727d86}.principles{border-top:1px solid #d3d9df;margin-top:65px;padding-top:25px;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.principles b{display:block;font-size:18px;letter-spacing:-.03em}.principles span{font-size:13px;color:#788793;line-height:1.7;display:block;margin-top:7px}.end{background:#111927;color:#f6f8fb;padding:105px 0;position:relative}.end h2{font-size:clamp(65px,9vw,120px);letter-spacing:-.072em;line-height:.94;margin:25px 0 33px}.end:after{content:'';position:absolute;right:0;top:0;height:100%;width:43%;background:radial-gradient(circle,#42639b33,transparent 66%);pointer-events:none}.end>.shell{position:relative;z-index:2}.footer{background:#080d14;color:#cbd5e1;padding:55px 0 20px}.footer-top{display:flex;align-items:start;justify-content:space-between;gap:30px}.footer-top h3{font-size:27px;letter-spacing:-.07em;margin:0}.footer-top h3 span{color:#95c8f1}.footer-top p{font-size:12px;color:#7d8da0}.footer-top nav{display:flex;gap:23px;flex-wrap:wrap}.footer-top nav a{font-size:11px}.footer-bottom{border-top:1px solid #ffffff20;margin-top:50px;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:10px;color:#8390a1}.research-note{margin-top:23px;color:#344657;font-size:9px;letter-spacing:.02em}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:none}
-#detailDialog{width:min(830px,calc(100% - 32px));max-height:89dvh;background:#101b2a;color:#f6f8fa;border:1px solid #536174;border-radius:22px;padding:0;overflow:auto;box-shadow:0 36px 100px #000b}#detailDialog::backdrop{background:#020710d9;backdrop-filter:blur(8px)}.dialog-head{position:relative;padding:58px 35px 28px;min-height:210px;background:linear-gradient(120deg,#23364e,#142333 70%)}.dialog-head small{font-size:10px;color:#99b8d5;letter-spacing:.12em}.dialog-head h2{font-size:clamp(42px,7vw,65px);line-height:1;letter-spacing:-.065em;margin:15px 0 0}.close-dialog{position:absolute;right:16px;top:16px;height:41px;width:41px;border-radius:50%;border:1px solid #ffffff6e;background:#0b131f9c;color:#fff;display:grid;place-items:center}.dialog-grid{padding:36px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px}.dialog-grid p{font-size:14px;line-height:1.8;color:#b8c7d6}.dialog-grid h3{font-size:18px;margin:25px 0 12px}.dialog-grid ul{padding:0;list-style:none}.dialog-grid li{border-top:1px solid #ffffff20;font-size:12px;color:#b7c4d2;padding:13px 0}.dialog-grid li:before{content:'+';color:#85bbe7;margin-right:12px}.dialog-side{border-left:1px solid #ffffff20;padding-left:26px}.dialog-side small{color:#90aabd;letter-spacing:.1em;font-size:10px}.dialog-side strong{display:block;font-size:13px;line-height:1.5;margin:9px 0 23px}.dialog-side a{display:flex;align-items:center;gap:10px;border-radius:30px;background:#0071e3;padding:12px 14px;font-size:12px;font-weight:750}.dialog-side em{font-size:11px;color:#93a8bb;line-height:1.7;font-style:normal;display:block;margin-top:24px}
-@keyframes floatfront{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(5deg) translateY(-12px)}}@media(max-width:900px){.nav-right>span{display:none}.shell{width:calc(100% - 42px)}.intro h1{font-size:clamp(70px,11.7vw,124px)}.feature-copy{padding-top:89px}.mechanic-showcase{transform:scale(.9);transform-origin:top center;margin-bottom:-45px}.wheel{width:160px;border-width:20px}.motor-scene{height:440px}.two-up .mini-feature{height:670px}.mini-copy h2{font-size:74px}}@media(max-width:640px){html{scroll-padding-top:55px}.shell{width:calc(100% - 34px)}.global-nav{height:54px}.nav-in{width:calc(100% - 34px)}.navigation,.nav-cta{display:none}.hamburger{display:grid}.mobile-nav{top:54px}.intro{min-height:calc(100svh - 54px)}.intro-inner{margin:70px 18px}.intro-kicker{font-size:8px;letter-spacing:.08em}.intro h1{font-size:clamp(58px,15vw,95px)}.intro p{font-size:14px;max-width:340px}.intro-floor{left:15px;right:15px;font-size:8px;letter-spacing:.05em}.index-section{padding:75px 0}.section-title{margin-bottom:33px}.section-title h2{font-size:clamp(43px,11.7vw,66px)}.section-title p{font-size:13px}.index-row{grid-template-columns:26px 1fr 20px;padding:20px 5px;gap:10px}.index-row strong{font-size:21px}.index-row small{font-size:8px}.index-status{grid-column:2;grid-row:2;text-align:left;font-size:9px}.index-row svg{grid-column:3;grid-row:1}.feature-copy{padding:74px 19px 6px}.feature-over{font-size:9px;letter-spacing:.1em}.feature-copy h2{font-size:clamp(57px,15vw,83px)}.feature-copy p{font-size:14px}.feature-actions{gap:14px;margin:25px 0}.blue-button{font-size:12px;padding:11px 17px}.quiet-link{font-size:12px}.mechanic-showcase{height:570px;transform:scale(.75);width:133.33%;margin-left:-16.66%;margin-bottom:-110px}.back-phone{left:calc(50% - 265px)}.front-phone{left:calc(50% - 105px)}.mechanic-halo{left:calc(50% - 330px)}.fine-caption{bottom:28px;right:7%;font-size:8px}.feature-details{padding:18px 17px 47px;gap:10px}.feature-details b{font-size:9px}.feature-details span{font-size:10px}.outmile-section{padding-bottom:65px}.map-frame{width:calc(100% - 22px);height:445px;margin-top:42px;border-radius:18px}.map-ui{padding:12px}.map-label{font-size:8px;padding:10px 12px}.route-buttons button{font-size:10px;padding:10px 12px}.motor-section{padding-bottom:62px}.motor-scene{height:335px;width:calc(100% - 22px)}.motor-scene:before{font-size:28vw;top:36%}.motor-body{height:83px;top:46%}.motor-body:before{top:-45px;height:54px}.wheel{width:122px;border-width:14px;top:62%}.wheel.one{left:20%}.wheel.two{right:17%}.scene-caption{font-size:8px}.two-up{grid-template-columns:1fr}.mini-feature{height:630px!important}.mini-copy{padding-top:43px}.mini-copy h2{font-size:clamp(73px,15vw,100px)}.mini-copy p{font-size:13px}.about{padding:76px 0}.about-grid{grid-template-columns:1fr;gap:6px}.about h2{font-size:clamp(51px,12vw,70px)}.about-text{padding:0;font-size:14px}.principles{margin-top:43px;grid-template-columns:1fr;gap:22px}.principles b{font-size:17px}.principles span{font-size:12px}.end{padding:80px 0}.end h2{font-size:clamp(61px,15vw,95px)}.footer-top{flex-direction:column;gap:25px}.footer-top nav{gap:18px}.footer-bottom{flex-direction:column;align-items:start;gap:8px}.dialog-grid{grid-template-columns:1fr;padding:25px;gap:20px}.dialog-side{border-left:0;border-top:1px solid #ffffff22;padding:20px 0 0}.dialog-head{padding:55px 24px 27px}.dialog-head h2{font-size:44px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0d14">
+  <meta name="description" content="Ravrent Interactive develops games, simulations and practical software. Explore Motor Dynasty, Life OS, Block Frontier, Outmile, and Ravrent Mechanic.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ravrent Interactive — Games and Software">
+  <meta property="og:description" content="An independent studio creating automotive software, navigation experiences and deep simulation games.">
+  <meta property="og:url" content="https://ravrentinteractive.vercel.app/">
+  <link rel="canonical" href="https://ravrentinteractive.vercel.app/">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/site.css?v=8">
+  <script defer src="/site.js?v=8"></script>
+  <title>Ravrent Interactive — Games and Software</title>
+</head>
 <body>
-<svg class="defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol><symbol id="out" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10"/></symbol><symbol id="menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol><symbol id="close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol><symbol id="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol><symbol id="play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol><symbol id="video" viewBox="0 0 24 24"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m17 9 5-2v10l-5-2"/></symbol><symbol id="camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/></symbol><symbol id="engine" viewBox="0 0 24 24"><path d="M5 9H2v6h3m4-7V4m6 4V4M6 8h12l3 4v5l-3 3H7l-2-3V9Z"/></symbol></svg>
-<a href="#main" class="skip">Skip to content</a>
-<header class="global-nav"><div class="nav-in"><a href="#top" class="brand"><span class="brand-icon">R<em>.</em></span><span class="brand-text">RAVRENT<small>INTERACTIVE</small></span></a><nav class="navigation" aria-label="Main"><a href="#projects">Projects</a><a href="#mechanic">Mechanic</a><a href="#outmile">Outmile</a><a href="#studio">Studio</a></nav><div class="nav-right"><span>INDEPENDENT STUDIO</span><a href="#projects" class="nav-cta">Explore <svg><use href="#out"/></svg></a><button class="hamburger" type="button" id="menuButton" aria-expanded="false" aria-label="Open navigation" aria-controls="mobileNav"><svg><use href="#menu"/></svg></button></div></div><nav class="mobile-nav" id="mobileNav" aria-label="Mobile" hidden><a href="#projects">Projects <svg><use href="#arrow"/></svg></a><a href="#mechanic">Mechanic <svg><use href="#arrow"/></svg></a><a href="#outmile">Outmile <svg><use href="#arrow"/></svg></a><a href="#studio">Studio <svg><use href="#arrow"/></svg></a></nav></header>
-<main id="main">
-<section class="intro" id="top"><canvas id="orbit" class="orbital" aria-hidden="true"></canvas><div class="intro-inner"><div class="intro-kicker reveal">INDEPENDENT GAMES & SOFTWARE STUDIO</div><h1 class="reveal">Games.<br>Software.<br><span>Beyond.</span></h1><p class="reveal">Original simulations, creative worlds and useful applications. Built by Ravrent Interactive.</p><a class="blue-button reveal" href="#projects">Explore our projects <svg><use href="#arrow"/></svg></a></div><div class="intro-floor"><span>RAVRENT INTERACTIVE</span><span>FIVE PROJECTS &nbsp; ↓</span></div></section>
-<div class="announcement"><div class="shell announce-row"><span class="announce-tag">NEW PROJECT</span><span>Ravrent Mechanic — automotive AI assistance in private beta.</span><a href="#mechanic">Learn more <svg><use href="#arrow"/></svg></a></div></div>
-<section class="index-section" id="projects"><div class="shell"><div class="section-title reveal"><div class="eyebrow">EXPLORE THE STUDIO</div><h2>Different products.<br><span>One creative direction.</span></h2><p>Five projects in different stages of development. Explore the applications, simulations and games we're building.</p></div><div class="project-index">
-<a href="#mechanic" class="index-row"><span class="index-no">01</span><span><strong>Ravrent Mechanic</strong><small>AUTOMOTIVE AI ASSISTANT</small></span><span class="index-status">PRIVATE BETA</span><svg><use href="#arrow"/></svg></a>
-<a href="#outmile" class="index-row"><span class="index-no">02</span><span><strong>Outmile</strong><small>TRAILS, ROUTES & NAVIGATION</small></span><span class="index-status">PROTOTYPE</span><svg><use href="#arrow"/></svg></a>
-<a href="#motor" class="index-row"><span class="index-no">03</span><span><strong>Motor Dynasty</strong><small>AUTOMOTIVE BUSINESS SIMULATION</small></span><span class="index-status">PROTOTYPE</span><svg><use href="#arrow"/></svg></a>
-<a href="#block" class="index-row"><span class="index-no">04</span><span><strong>Block Frontier</strong><small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-status">EARLY BUILD</span><svg><use href="#arrow"/></svg></a>
-<a href="#life" class="index-row"><span class="index-no">05</span><span><strong>Life OS</strong><small>LIFE & ECONOMY SIMULATION</small></span><span class="index-status">DEVELOPMENT</span><svg><use href="#arrow"/></svg></a>
-</div></div></section>
-<section id="mechanic" class="feature feature-dark"><div class="feature-copy reveal"><div class="feature-over">RAVRENT / 01 &nbsp; — &nbsp; AUTOMOTIVE ASSISTANCE</div><h2>Ravrent<br><span>Mechanic.</span></h2><p>Automotive questions deserve thoughtful answers. A developing assistant built around vehicle context, symptoms and repair history.</p><div class="feature-actions"><button class="blue-button" type="button" data-details="mechanic">Explore Mechanic <svg><use href="#arrow"/></svg></button><span class="status-chip">PRIVATE BETA</span></div></div><div class="mechanic-showcase reveal"><div class="mechanic-halo"></div><div class="phone back-phone" aria-hidden="true"><div class="island"></div><div class="dial"></div><div class="car-graphic"></div></div><div class="phone front-phone" aria-label="Illustrative app design, not live artificial intelligence"><div class="island"></div><div class="phone-screen"><div class="screen-nav"><b>R<span>.</span></b><span>MECHANIC</span><span>＋</span></div><div class="screen-main"><span class="screen-label">AUTOMOTIVE ASSISTANT</span><h3>Start with<br>your vehicle.</h3><p>Describe a symptom, add a photo or upload a video.</p><div class="screen-items"><div><svg><use href="#engine"/></svg> Engine & drivetrain</div><div><svg><use href="#camera"/></svg> Photo inspection</div><div><svg><use href="#video"/></svg> Video review</div></div></div><div class="screen-compose">Describe the issue… <b>＋</b></div></div></div><div class="fine-caption">ILLUSTRATIVE INTERFACE / NOT A LIVE CHAT</div></div><div class="feature-details shell"><div><b>VEHICLE HISTORY</b><span>Keep useful repair context.</span></div><div><b>MEDIA SUPPORT</b><span>Work from photos and video.</span></div><div><b>RESEARCH</b><span>Source-backed when available.</span></div></div></section>
-<section id="outmile" class="feature outmile-section"><div class="feature-copy reveal"><div class="feature-over">RAVRENT / 02 &nbsp; — &nbsp; MAPPING & EXPLORATION</div><h2>Outmile.<br><span>Go further.</span></h2><p>Trail exploration, scenic routes, road trips and GPS. An ambitious navigation product still in development.</p><div class="feature-actions"><button class="blue-button" type="button" data-details="outmile">Explore Outmile <svg><use href="#arrow"/></svg></button><a href="https://ravrent-explore.vercel.app/" class="quiet-link" target="_blank" rel="noopener noreferrer">Open prototype <svg><use href="#out"/></svg></a></div></div><div class="map-frame reveal"><canvas id="terrain" role="img" aria-label="Animated fictional terrain with an example route, not real map or GPS."></canvas><div class="map-ui"><div class="map-top"><span class="map-label">OUTMILE / ROUTE STUDY</span><span class="map-label">FICTIONAL TERRAIN</span></div><div class="map-bottom"><div class="route-buttons" role="group" aria-label="Route example"><button type="button" class="active" data-route="scenic" aria-pressed="true">Scenic road</button><button type="button" data-route="trail" aria-pressed="false">Off-road trail</button></div><button type="button" id="pauseMap" class="motion-btn" aria-label="Pause animation"><svg><use href="#pause"/></svg></button></div></div></div><p class="map-note">Design-only visualization. No actual GPS, map providers, verified trails or working route instructions on this studio page.</p></section>
-<section id="motor" class="feature motor-section"><div class="feature-copy reveal"><div class="feature-over">RAVRENT / 03 &nbsp; — &nbsp; AUTOMOTIVE SIMULATION</div><h2>Motor<br><span>Dynasty.</span></h2><p>Design vehicles, engineer the parts, operate factories and run an automotive company through a changing market.</p><div class="feature-actions"><button class="blue-button" type="button" data-details="motor">Explore the game <svg><use href="#arrow"/></svg></button><a class="quiet-link" href="https://motor-eta-six.vercel.app/" target="_blank" rel="noopener noreferrer">Open prototype <svg><use href="#out"/></svg></a></div></div><div class="motor-scene reveal" aria-label="Original abstract automobile concept illustration, not game footage"><div class="motor-body"></div><div class="wheel one"></div><div class="wheel two"></div><div class="scene-caption">ORIGINAL DESIGN STUDY / NOT GAMEPLAY</div></div></section>
-<section class="two-up">
-<article id="block" class="mini-feature block"><div class="mini-top"><span>RAVRENT / 04</span><span>SANDBOX GAME</span></div><div class="mini-copy reveal"><h2>Block<br>Frontier.</h2><p>A world to mine, explore and build. An original sandbox prototype in active development.</p><button type="button" data-details="block">Explore the game <svg><use href="#arrow"/></svg></button><a href="https://block-frontier.hatchable.site" target="_blank" rel="noopener noreferrer">Open prototype <svg><use href="#out"/></svg></a></div><div class="cubes" aria-label="Original voxel-inspired abstract artwork"><div class="cube"></div><div class="cube"></div><div class="cube"></div></div><span class="mini-caption">ORIGINAL CONCEPT GRAPHIC</span></article>
-<article id="life" class="mini-feature life"><div class="mini-top"><span>RAVRENT / 05</span><span>LIFE SIMULATION</span></div><div class="mini-copy reveal"><h2>Life<br>OS.</h2><p>Companies, economic systems and decisions with consequences. A deeper life simulation in development.</p><button type="button" data-details="life">Explore the game <svg><use href="#arrow"/></svg></button></div><div class="city" aria-label="Original abstract city graphic"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="mini-caption">ORIGINAL CONCEPT GRAPHIC</span></article></section>
-<section id="studio" class="about"><div class="shell"><div class="about-grid"><div class="reveal"><div class="eyebrow">THE STUDIO</div><h2>Different products.<br><span>One approach.</span></h2></div><p class="about-text reveal">Ravrent Interactive builds ambitious games and practical software. We value detailed systems, clear interfaces and continued improvement. Whether you’re engineering a vehicle, exploring a map or managing a simulated company, the experience should feel considered.</p></div><div class="principles reveal"><div><b>Purposeful features.</b><span>Useful interactions, not decorative complexity.</span></div><div><b>Built for mobile.</b><span>Clear navigation and adaptable layouts across screens.</span></div><div><b>Honest development.</b><span>Prototypes are labeled as prototypes, not finished products.</span></div></div></div></section>
-<section class="end"><div class="shell reveal"><div class="eyebrow">RAVRENT INTERACTIVE</div><h2>Explore the<br>portfolio.</h2><a class="blue-button" href="#projects">View all projects <svg><use href="#arrow"/></svg></a></div></section></main>
-<footer class="footer"><div class="shell"><div class="footer-top"><div><h3>RAVRENT<span>.</span></h3><p>Independent games and software.</p></div><nav aria-label="Footer"><a href="#projects">Projects</a><a href="#mechanic">Mechanic</a><a href="#outmile">Outmile</a><a href="#studio">Studio</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> Ravrent Interactive</span><span>Concept visuals are illustrative, not gameplay captures.</span><a href="#top">Back to top ↑</a></div><div class="research-note">INTERNAL STUDIO RESEARCH / Lottery Intelligence Lab — private, no public access.</div></div></footer>
-<dialog id="detailDialog" aria-labelledby="detailTitle"><div id="detailContent"></div></dialog>
-<script>
-"use strict";
-const PROJECTS={
-mechanic:{title:"Ravrent Mechanic",no:"01",label:"AUTOMOTIVE AI ASSISTANT / PRIVATE BETA",intro:"An automotive assistant with vehicle profiles, conversation history, reported symptoms, photos, video uploads and saved reports. Research assistance depends on service availability and provider quotas. It does not replace a hands-on vehicle diagnosis.",features:["Vehicle and repair context","Photo and video uploads","AI-assisted troubleshooting","Saved conversations and diagnostic reports"],status:"Private beta",url:null,note:"Unrestricted public access is held back until authentication and stronger usage controls are in place."},
-outmile:{title:"Outmile",no:"02",label:"NAVIGATION / PROTOTYPE",intro:"A developing GPS and exploration app with ambitious goals for scenic drives, off-road trails, trip planning and everyday road navigation. The map animation on this page is fictional, and working navigation capabilities should be verified in the prototype.",features:["Scenic drive and trail planning concepts","GPS and conventional navigation goals","Outdoor exploration","Offline and map-data improvements in development"],status:"Prototype in development",url:"https://ravrent-explore.vercel.app/",note:"An active deployment exists; navigation functions and data coverage may not be complete."},
-motor:{title:"Motor Dynasty",no:"03",label:"AUTOMOTIVE SIMULATION / PROTOTYPE",intro:"An automotive company simulation covering vehicle design, engineering, factories, model generations, contracts, finances and market competition.",features:["Vehicle engineering and development","Factory and production systems","Company and contract strategy","Finance and economic simulation"],status:"Playable prototype; ongoing development",url:"https://motor-eta-six.vercel.app/",note:"The visual artwork on this studio site is not gameplay footage."},
-block:{title:"Block Frontier",no:"04",label:"SANDBOX GAME / EARLY BUILD",intro:"A developing original voxel sandbox based on exploration, mining, building, terrain generation and creative or survival experimentation.",features:["Generated worlds","Mining and building","Exploration","Expanding survival systems"],status:"Early playable prototype",url:"https://block-frontier.hatchable.site",note:"The abstract cube artwork is not a screenshot from the game."},
-life:{title:"Life OS",no:"05",label:"LIFE & ECONOMY SIM / DEVELOPMENT",intro:"A life and business simulation focused on running companies, economic decisions, player agency and interconnected systems.",features:["Company management","Economy and financial decisions","Player progression","Broader connected simulation mechanics"],status:"In development",url:null,note:"No verified playable public URL is available here."}
-};
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],ico=n=>'<svg aria-hidden="true"><use href="#'+n+'"/></svg>';
-const dialog=$("#detailDialog");
-function openDetail(key){const p=PROJECTS[key];if(!p)return false;$("#detailContent").innerHTML='<div class="dialog-head"><button type="button" id="closeDialog" class="close-dialog" aria-label="Close project details">'+ico("close")+'</button><small>RAVRENT / '+p.no+' — '+p.label+'</small><h2 id="detailTitle">'+p.title+'</h2></div><div class="dialog-grid"><div><p>'+p.intro+'</p><h3>Product focus</h3><ul>'+p.features.map(f=>'<li>'+f+'</li>').join("")+'</ul></div><aside class="dialog-side"><small>CURRENT STATUS</small><strong>'+p.status+'</strong>'+(p.url?'<a href="'+p.url+'" target="_blank" rel="noopener noreferrer">Open prototype '+ico("out")+'</a>':'')+'<em>'+p.note+'</em></aside></div>';dialog.showModal();document.body.style.overflow="hidden";document.title=p.title+" — Ravrent Interactive";return true}
-$$("[data-details]").forEach(b=>b.addEventListener("click",()=>openDetail(b.dataset.details)));
-document.addEventListener("click",e=>{if(e.target.closest("#closeDialog"))dialog.close()});
-dialog.addEventListener("close",()=>{document.body.style.overflow="";document.title="Ravrent Interactive — Games & Software"});
-const menu=$("#mobileNav"),menuBtn=$("#menuButton");function setMenu(on){menu.hidden=!on;menuBtn.setAttribute("aria-expanded",String(on));menuBtn.setAttribute("aria-label",on?"Close navigation":"Open navigation");menuBtn.innerHTML=ico(on?"close":"menu")}
-menuBtn.addEventListener("click",()=>setMenu(menu.hidden));$$(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
-$("#year").textContent=String(new Date().getFullYear());
-const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-if("IntersectionObserver"in window&&!reduced){let ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");ob.unobserve(e.target)}}),{threshold:.05});$$(".reveal").forEach(x=>ob.observe(x))}else $$(".reveal").forEach(x=>x.classList.add("visible"));
-// Motion enhances scenery only; all content remains available without it.
-const orbit=$("#orbit"),oc=orbit.getContext("2d");let ow=1,oh=1,orbFrame=0;function orbitSize(){const r=orbit.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);ow=r.width;oh=r.height;orbit.width=Math.floor(ow*d);orbit.height=Math.floor(oh*d);oc.setTransform(d,0,0,d,0,0)}
-function paintOrbit(t){oc.clearRect(0,0,ow,oh);const base=Math.min(ow*.41,oh*.55);for(let i=0;i<15;i++){oc.beginPath();oc.ellipse(ow*.5,oh*.48,base*(.22+i*.062),base*(.14+i*.033),-.23,0,Math.PI*2);oc.strokeStyle="rgba(151,188,222,"+(i%3===0?.12:.057)+")";oc.lineWidth=i%3===0?1.3:.7;oc.stroke()}for(let i=0;i<42;i++){const angle=i*2.39996+(reduced?0:t*.000024*(i%3+1)),r=base*(.17+(i%17)/20);oc.beginPath();oc.arc(ow*.5+Math.cos(angle)*r,oh*.48+Math.sin(angle)*r*.58,i%7===0?1.8:.8,0,Math.PI*2);oc.fillStyle=i%7===0?"#a3c9ea66":"#a1bfd036";oc.fill()}if(!reduced&&!document.hidden)orbFrame=requestAnimationFrame(paintOrbit)}
-if(oc){new ResizeObserver(()=>{orbitSize();paintOrbit(0)}).observe(orbit);orbitSize();paintOrbit(0)}
-const map=$("#terrain"),mc=map.getContext("2d",{alpha:false}),frame=map.parentElement;let mw=1,mh=1,route="scenic",playing=!reduced,elapsed=0,prev=performance.now(),animation=0;const roads={scenic:[[.03,.79],[.18,.63],[.31,.65],[.43,.43],[.62,.47],[.76,.25],[.92,.18]],trail:[[.05,.82],[.19,.72],[.25,.44],[.38,.54],[.51,.25],[.71,.31],[.91,.12]]};
-function mapSize(){let b=frame.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);mw=b.width;mh=b.height;map.width=Math.floor(mw*d);map.height=Math.floor(mh*d);mc.setTransform(d,0,0,d,0,0)}
-function renderMap(t){if(playing)elapsed+=Math.min(65,t-prev);prev=t;mc.fillStyle="#c1d1b6";mc.fillRect(0,0,mw,mh);for(let j=0;j<18;j++){mc.beginPath();for(let i=0;i<95;i++){let x=i/94*mw,y=j/17*mh+Math.sin(i*.17+j*.6)*23+Math.cos(i*.1-j*.6)*15;if(!i)mc.moveTo(x,y);else mc.lineTo(x,y)}mc.strokeStyle=j%4===0?"#6e9175a9":"#73977878";mc.lineWidth=j%4===0?1.7:1;mc.stroke()}const nodes=roads[route];function trace(){mc.beginPath();nodes.forEach(([x,y],i)=>i?mc.lineTo(x*mw,y*mh):mc.moveTo(x*mw,y*mh))}mc.lineJoin="round";mc.lineCap="round";trace();mc.strokeStyle="#fff9dc";mc.lineWidth=10;mc.stroke();trace();mc.strokeStyle=route==="scenic"?"#e78559":"#255c49";mc.lineWidth=5;mc.stroke();const p=elapsed/15000%(nodes.length-1),k=Math.min(nodes.length-2,Math.floor(p)),u=p-k,x=(nodes[k][0]*(1-u)+nodes[k+1][0]*u)*mw,y=(nodes[k][1]*(1-u)+nodes[k+1][1]*u)*mh;mc.beginPath();mc.arc(x,y,12,0,Math.PI*2);mc.fillStyle="#ffffffa0";mc.fill();mc.beginPath();mc.arc(x,y,6,0,Math.PI*2);mc.fillStyle="#164f41";mc.fill();mc.font="600 11px system-ui";mc.fillStyle="#40684d";mc.fillText("RIDGELINE",mw*.45,mh*.18);mc.fillText("PINE VALLEY",mw*.10,mh*.42);if(playing&&!document.hidden)animation=requestAnimationFrame(renderMap)}
-if(mc){new ResizeObserver(()=>{mapSize();renderMap(performance.now())}).observe(frame);mapSize();renderMap(performance.now())}
-$$("[data-route]").forEach(b=>b.addEventListener("click",()=>{route=b.dataset.route;elapsed=0;prev=performance.now();$$("[data-route]").forEach(x=>{const active=x===b;x.classList.toggle("active",active);x.setAttribute("aria-pressed",String(active))});renderMap(prev)}));
-$("#pauseMap").addEventListener("click",()=>{playing=!playing;const b=$("#pauseMap");b.innerHTML=ico(playing?"pause":"play");b.setAttribute("aria-label",playing?"Pause animation":"Play animation");prev=performance.now();cancelAnimationFrame(animation);if(playing)animation=requestAnimationFrame(renderMap)});
-if(reduced){$("#pauseMap").innerHTML=ico("play");$("#pauseMap").setAttribute("aria-label","Play animation")}document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(orbFrame);cancelAnimationFrame(animation);prev=performance.now();if(!document.hidden){if(!reduced)orbFrame=requestAnimationFrame(paintOrbit);if(playing)animation=requestAnimationFrame(renderMap)}});
-</script></body></html>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5 5-3Z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="#top" class="brand" aria-label="Ravrent Interactive home">
+        <span class="brand-mark">R<i>.</i></span>
+        <span class="brand-name">RAVRENT<small>INTERACTIVE</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#mechanic">Mechanic</a>
+        <a href="#outmile">Outmile</a>
+        <a href="#games">Games</a>
+        <a href="#studio">Studio</a>
+      </nav>
+      <a class="header-cta" href="#projects">Our work <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><svg aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+      <a href="#projects">All projects <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      <a href="#mechanic">Ravrent Mechanic <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      <a href="#outmile">Outmile <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      <a href="#games">Games <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      <a href="#studio">The studio <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="overline hero-kicker reveal"><span class="signal"></span> INDEPENDENT SOFTWARE & GAME STUDIO</div>
+          <h1 class="reveal" id="heroTitle">Products<br>with <em>depth.</em></h1>
+          <p class="hero-description reveal">Ravrent Interactive develops automotive software, exploration tools and simulation games. Different products, designed with the same attention to how they work.</p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="button button-primary">Explore the projects <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            <a href="#studio" class="button button-outline">About Ravrent <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+          </div>
+          <div class="hero-footnote"><span></span> FIVE PROJECTS · TWO APPS · THREE GAMES</div>
+        </div>
+        <div class="hero-art" aria-label="Decorative animated technical line art">
+          <canvas id="heroCanvas" aria-hidden="true"></canvas>
+          <div class="hero-outline" aria-hidden="true"></div>
+          <span class="hero-grid-label">R / INTERACTIVE SYSTEMS</span>
+          <span class="floating-caption">ORIGINAL GENERATIVE MOTION ART</span>
+        </div>
+      </div>
+      <div class="hero-bottom"><div class="container"><span>DESIGN · ENGINEERING · EXPLORATION</span><span>SCROLL TO DISCOVER ↓</span></div></div>
+    </section>
+
+    <aside class="announcement" aria-label="Studio development highlight">
+      <div class="container announcement-row">
+        <strong>PRODUCT SPOTLIGHT</strong>
+        <span>Ravrent Mechanic — a developing automotive assistant in private beta.</span>
+        <a href="#mechanic">Explore <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      </div>
+    </aside>
+
+    <section class="work section-space" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-top reveal">
+          <span class="overline">01 / PORTFOLIO</span>
+          <div>
+            <h2 id="projectsTitle">The work, <span>in focus.</span></h2>
+            <p>Five projects at different stages. A practical automotive assistant, a navigation app, and three simulation and sandbox games. Explore each project and its current development status.</p>
+          </div>
+        </div>
+        <nav class="index" aria-label="Project index">
+          <a href="#mechanic"><span class="index-no">01</span><span class="index-title">Ravrent Mechanic<small>AUTOMOTIVE SOFTWARE</small></span><span class="index-phase">PRIVATE BETA</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <a href="#outmile"><span class="index-no">02</span><span class="index-title">Outmile<small>MAPS & NAVIGATION</small></span><span class="index-phase">PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <a href="#motor"><span class="index-no">03</span><span class="index-title">Motor Dynasty<small>AUTOMOTIVE CORPORATION SIMULATION</small></span><span class="index-phase">PLAYABLE PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <a href="#block"><span class="index-no">04</span><span class="index-title">Block Frontier<small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-phase">EARLY PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <a href="#life"><span class="index-no">05</span><span class="index-title">Life OS<small>LIFE & BUSINESS SIMULATION</small></span><span class="index-phase">IN DEVELOPMENT</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="product product-mechanic" id="mechanic" aria-labelledby="mechanicTitle">
+      <div class="container product-inner">
+        <div class="product-copy reveal">
+          <span class="overline">02 / AUTOMOTIVE SOFTWARE</span>
+          <h2 id="mechanicTitle">Ravrent<br><span>Mechanic.</span></h2>
+          <p>Help with the details behind a vehicle problem. Ravrent Mechanic brings conversations, vehicle profiles, diagnostic reports, and photo or video input into one developing assistant.</p>
+          <div class="actions">
+            <button type="button" class="button button-primary" data-project="mechanic">View project details <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+            <span class="overline" style="color:#8faec8">PRIVATE BETA</span>
+          </div>
+          <div class="mechanic-switch" role="group" aria-label="Mechanic interface concept views">
+            <button type="button" data-mechanic="diagnosis" aria-pressed="true" class="selected">Assistance</button>
+            <button type="button" data-mechanic="garage" aria-pressed="false">Garage</button>
+            <button type="button" data-mechanic="research" aria-pressed="false">Reports</button>
+          </div>
+        </div>
+        <div class="mechanic-visual reveal">
+          <div class="preview-orbit" aria-hidden="true"></div>
+          <div class="phone" aria-label="Interactive illustrative Ravrent Mechanic interface study, not a live application">
+            <div class="phone-head"><strong>RAVRENT.</strong><span>MECHANIC / CONCEPT</span></div>
+            <div class="phone-body" id="mechanicPreviewContent"></div>
+            <div class="phone-bottom">Ask about your vehicle…</div>
+          </div>
+          <span class="preview-note">INTERFACE STUDY · NOT LIVE AI</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="product product-outmile" id="outmile" aria-labelledby="outmileTitle">
+      <div class="container product-inner reverse">
+        <div class="product-copy reveal">
+          <span class="overline">03 / MAPPING & EXPLORATION</span>
+          <h2 id="outmileTitle">Outmile.<br><span>Explore more.</span></h2>
+          <p>Road trips, scenic routes, off-road discovery, and navigation. Outmile is an evolving map and GPS project built for the places between destinations.</p>
+          <div class="actions">
+            <button type="button" class="button button-dark" data-project="outmile">About Outmile <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+            <a class="text-link" href="https://ravrent-explore.vercel.app/" rel="noopener noreferrer" target="_blank">Open prototype <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+          </div>
+        </div>
+        <div class="map-device reveal">
+          <canvas id="terrainCanvas" role="img" aria-label="Interactive demonstration showing fictional topography and a fictional scenic or off-road route. Not a real map."></canvas>
+          <div class="map-topbar"><span>OUTMILE / MAP STUDY</span><span>FICTIONAL TERRAIN</span></div>
+          <span class="map-footnote">NOT A GPS SERVICE</span>
+          <div class="map-bottom-bar">
+            <div class="map-mode" role="group" aria-label="Illustrative route mode">
+              <button type="button" class="active" data-map-route="scenic" aria-pressed="true">Scenic loop</button>
+              <button type="button" data-map-route="trail" aria-pressed="false">Trail pass</button>
+            </div>
+            <button type="button" class="map-pause" id="mapPause" aria-label="Pause map animation"><svg aria-hidden="true"><use href="#icon-pause"></use></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product product-motor" id="motor" aria-labelledby="motorTitle">
+      <div class="container product-inner">
+        <div class="product-copy reveal">
+          <span class="overline">04 / AUTOMOTIVE SIMULATION</span>
+          <h2 id="motorTitle">Motor<br><span>Dynasty.</span></h2>
+          <p>From a new model to an entire automotive corporation. Build vehicles, develop engines, manage production, and navigate the economics of the industry.</p>
+          <div class="actions">
+            <button type="button" class="button button-primary" data-project="motor">Discover the game <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+            <a class="text-link" href="https://motor-eta-six.vercel.app/" rel="noopener noreferrer" target="_blank">Open prototype <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+          </div>
+        </div>
+        <div class="motor-frame reveal">
+          <div class="lab-top"><span>MOTOR DYNASTY / PRODUCT SYSTEMS</span><span class="lab-indicator"><i></i> DESIGN STUDY</span></div>
+          <div class="lab-tabs" role="tablist" aria-label="Motor Dynasty capability previews">
+            <button type="button" data-lab="engineering" class="active" role="tab" aria-selected="true">Engineering</button>
+            <button type="button" data-lab="factory" role="tab" aria-selected="false">Operations</button>
+            <button type="button" data-lab="strategy" role="tab" aria-selected="false">Strategy</button>
+          </div>
+          <div class="lab-layout">
+            <div class="lab-diagram" aria-label="Original engineering line illustration, not a game screenshot">
+              <svg viewBox="0 0 380 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs><linearGradient id="carFill" x1="0" y1="70" x2="0" y2="215" gradientUnits="userSpaceOnUse"><stop stop-color="#c9ddeb" stop-opacity=".34"/><stop offset="1" stop-color="#648db3" stop-opacity=".05"/></linearGradient></defs>
+                <g stroke="#8ebad7" stroke-width="1" fill="none" opacity=".35"><circle cx="188" cy="129" r="93"/><circle cx="188" cy="129" r="64"/><path d="M5 129h369M188 3v244M15 40 360 212M15 212 360 40"/></g>
+                <path d="M22 154 38 125l40-9 47-42c18-12 35-17 67-17h53c24 0 39 10 59 34l23 25 32 8 10 26-8 18H34l-12-14Z" fill="url(#carFill)" stroke="#c5deee" stroke-width="2"/>
+                <path d="m124 114 28-39c9-7 25-9 41-9h16v47H120Zm95-48h24c20 0 35 12 50 32l11 15h-84Z" fill="#1b3347" stroke="#a7cddd" stroke-width="1.4"/>
+                <circle cx="100" cy="165" r="31" fill="#111f2b" stroke="#8fb3cd" stroke-width="4"/><circle cx="291" cy="165" r="31" fill="#111f2b" stroke="#8fb3cd" stroke-width="4"/>
+                <circle cx="100" cy="165" r="15" stroke="#a4cde5" stroke-width="3"/><circle cx="291" cy="165" r="15" stroke="#a4cde5" stroke-width="3"/>
+                <g stroke="#8fb2cd" opacity=".75"><path d="M120 114h185M210 68v49M54 181h279M81 147v36m210-37v37"/></g>
+                <g fill="#a9c8da" font-size="9" font-family="system-ui,sans-serif"><text x="15" y="20">DESIGN REFERENCE / CONCEPTUAL</text><text x="278" y="229">NOT GAMEPLAY</text></g>
+              </svg>
+            </div>
+            <div class="lab-copy" role="tabpanel" aria-label="Selected capability">
+              <small>CAPABILITY OVERVIEW</small>
+              <h3 id="labTitle">Build the vehicle.</h3>
+              <p id="labDetail">Plan vehicle lines, choose mechanical systems and develop models over time.</p>
+              <div id="labLabels"></div>
+            </div>
+          </div>
+          <div class="lab-footer">ORIGINAL INFORMATION GRAPHIC · NOT AN IN-GAME SCREENSHOT</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="games section-space" id="games" aria-labelledby="gamesTitle">
+      <div class="container">
+        <div class="games-head reveal">
+          <span class="overline">05 / MORE WORLDS</span>
+          <h2 id="gamesTitle">Beyond the ordinary.</h2>
+          <p>Two different kinds of simulation and creativity: a block-based sandbox and an evolving life-and-business world.</p>
+        </div>
+        <div class="games-grid">
+          <article class="game block" id="block">
+            <div class="game-info reveal">
+              <span class="overline">BLOCK FRONTIER / SANDBOX</span>
+              <h3>Build.<br>Explore.</h3>
+              <p>An original sandbox project exploring mining, building, world generation, and survival systems.</p>
+              <div class="game-actions">
+                <button type="button" data-project="block">Project details <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+                <a href="https://block-frontier.hatchable.site" target="_blank" rel="noopener noreferrer">Open prototype <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+              </div>
+            </div>
+            <div class="game-art" aria-hidden="true"><div class="voxel-shape"></div><div class="voxel-shape smaller"></div><div class="voxel-shape second"></div></div>
+            <div class="game-caption">ABSTRACT DESIGN ART / NOT GAMEPLAY</div>
+          </article>
+          <article class="game life" id="life">
+            <div class="game-info reveal">
+              <span class="overline">LIFE OS / ECONOMIC SIMULATION</span>
+              <h3>Choose.<br>Build.</h3>
+              <p>Developing a deeper simulation of businesses, personal choices, and connected economic systems.</p>
+              <div class="game-actions">
+                <button type="button" data-project="life">Project details <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+              </div>
+            </div>
+            <div class="game-art" aria-hidden="true">
+              <div class="city-glow"></div>
+              <div class="building-field"><span style="--h:48%"></span><span style="--h:77%"></span><span style="--h:96%"></span><span style="--h:70%"></span><span style="--h:89%"></span><span style="--h:53%"></span><span style="--h:72%"></span></div>
+            </div>
+            <div class="game-caption">ABSTRACT DESIGN ART / NOT GAMEPLAY</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio section-space" id="studio" aria-labelledby="studioTitle">
+      <div class="container">
+        <div class="studio-grid reveal">
+          <div><span class="overline" style="color:#738ba2">06 / ABOUT THE STUDIO</span><h2 id="studioTitle">Focused on<br><span>the experience.</span></h2></div>
+          <div class="studio-copy"><p>Ravrent Interactive is an independent game and software studio. Our projects span complex simulations, practical automotive assistance and navigation. We work to make ambitious systems easier to understand, use and explore.</p><p>Every project listed here is in development. We distinguish currently playable prototypes from private betas and planned functionality.</p></div>
+        </div>
+        <div class="studio-stat reveal">
+          <div><strong>05</strong><small>PROJECTS</small></div>
+          <div><strong>03</strong><small>GAMES</small></div>
+          <div><strong>02</strong><small>APPLICATIONS</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div><div class="footer-title">RAVRENT<span>.</span></div><p>Independent games and software.</p></div>
+        <nav aria-label="Footer navigation">
+          <a href="#projects">Projects</a>
+          <a href="#mechanic">Mechanic</a>
+          <a href="#outmile">Outmile</a>
+          <a href="#studio">Studio</a>
+          <a href="https://github.com/shepgleis-create/ravrentinteractive" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer-legal"><span>© <span id="year">2026</span> Ravrent Interactive.</span><span>Illustrative interface studies are not gameplay captures or live services.</span><a href="#top">Back to top ↑</a></div>
+      <div class="footer-private">INTERNAL RESEARCH / Lottery Intelligence Lab — not publicly accessible.</div>
+    </div>
+  </footer>
+
+  <dialog id="projectDialog" aria-labelledby="modalTitle"><div id="dialogContent"></div></dialog>
+</body>
+</html>
