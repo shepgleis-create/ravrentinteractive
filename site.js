@@ -191,14 +191,14 @@ function mapPaint(time){
   c.beginPath();c.arc(x,y,6,0,Math.PI*2);c.fillStyle="#245e4f";c.fill();
   c.fillStyle="#617a66";c.font="600 10px system-ui";
   c.fillText("RIDGE LOOP",w*.44,h*.21);c.fillText("VALLEY PASS",w*.12,h*.42);
-  if(playMap&&!document.hidden&&!reduce.matches)mapFrame=requestAnimationFrame(mapPaint);
+  if(playMap&&!document.hidden)mapFrame=requestAnimationFrame(mapPaint);
 }
 function switchRoute(mode){
   if(!mapRoutes[mode])return;routeMode=mode;mapElapsed=0;mapPrevious=performance.now();
   $$("[data-map-route]").forEach(b=>{const on=b.dataset.mapRoute===mode;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
-  mapPaint(mapPrevious)
+  cancelAnimationFrame(mapFrame);mapPaint(mapPrevious)
 }
-$$("[data-map-route]").forEach(b=>b.addEventListener("click",()=>switchRoute(b.dataset.mapRoute)));
+$("[data-map-route]").forEach(b=>b.addEventListener("click",()=>switchRoute(b.dataset.mapRoute)));
 $("#mapPause").addEventListener("click",()=>{
   playMap=!playMap;const btn=$("#mapPause");
   btn.setAttribute("aria-label",playMap?"Pause map animation":"Play map animation");btn.innerHTML=symbol(playMap?"pause":"play");
