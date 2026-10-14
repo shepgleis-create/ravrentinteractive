@@ -1,4 +1,5 @@
 "use strict";
+document.documentElement.classList.add("has-js");
 
 const projects = {
   mechanic: {
@@ -204,7 +205,7 @@ $("#mapPause").addEventListener("click",()=>{
   mapPrevious=performance.now();cancelAnimationFrame(mapFrame);mapPaint(mapPrevious)
 });
 if(reduce.matches){$("#mapPause").innerHTML=symbol("play");$("#mapPause").setAttribute("aria-label","Play map animation")}
-new ResizeObserver(()=>{resizeMap();mapPaint(performance.now())}).observe(terrain);
+new ResizeObserver(()=>{resizeMap();cancelAnimationFrame(mapFrame);mapPaint(performance.now())}).observe(terrain);
 resizeMap();mapPaint(performance.now());
 
 const heroCanvas=$("#heroCanvas"),hc=heroCanvas.getContext("2d",{alpha:true});
@@ -236,7 +237,7 @@ heroCanvas.addEventListener("pointermove",e=>{
   if(reduce.matches)return;const b=heroCanvas.getBoundingClientRect();
   mouse.x=(e.clientX-b.left)/b.width;mouse.y=(e.clientY-b.top)/b.height
 },{passive:true});
-new ResizeObserver(()=>{resizeHero();paintHero(0)}).observe(heroCanvas);
+new ResizeObserver(()=>{resizeHero();cancelAnimationFrame(heroFrame);paintHero(0)}).observe(heroCanvas);
 resizeHero();paintHero(0);
 
 document.addEventListener("visibilitychange",()=>{
