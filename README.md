@@ -51,3 +51,12 @@ The published production project is the pre-existing Vercel project `ravrentinte
 ## Privacy and beta restrictions
 
 No API keys are in this repository. Ravrent Mechanic is a private beta without unrestricted public access from this studio site. Do not add a direct chat endpoint until durable account identity, usage controls, quota monitoring, and abuse protection are in place.
+
+
+## V9 project explorer (2026-10-15)
+
+The project directory supports searching five project names, descriptions and feature lists; application/game and availability filters; local-only saved projects; and two-or-three-project comparison. Comparison tables use actual development status and available prototype links, not invented product scores. Visitors can copy a summary or share a comparison URL using the compare query parameter; individual project detail dialogs support direct hash links.
+
+The new explorer.mjs module exports pure functions tested by tests/explorer.test.mjs. The existing site.js owns the same canonical project data and existing animated design previews. Project index links remain navigable if scripting is disabled; enhanced controls are shown only when the new module initializes.
+
+The development checklist is maintained in DEVELOPMENT.md. Vercel's source integration is still not confirmed as connected. No separate project was created.
