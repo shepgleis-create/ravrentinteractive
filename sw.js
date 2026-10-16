@@ -1,5 +1,5 @@
-const VERSION="ravrent-v8-20261014";
-const CORE=["/","/site.css?v=8","/site.js?v=8","/icon.svg","/manifest.webmanifest"];
+const VERSION="ravrent-v9-20261015";
+const CORE=["/","/site.css?v=9","/site.js?v=9","/explorer.mjs?v=9","/icon.svg","/manifest.webmanifest"];
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(CORE)));
   self.skipWaiting();
