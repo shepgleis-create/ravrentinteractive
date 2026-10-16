@@ -9,8 +9,8 @@ test("site references its versioned source and has semantic structure",()=>{
   assert.match(html,/<!doctype html>/i);
   assert.match(html,/<main\s+id="main"/);
   assert.match(html,/<nav[^>]+aria-label="Main navigation"/);
-  assert.match(html,/site\.css\?v=8/);
-  assert.match(html,/site\.js\?v=8/);
+  assert.match(html,/site\.css\?v=9/);
+  assert.match(html,/site\.js\?v=9/);
 });
 test("all five project sections and detail entries exist",()=>{
   for(const id of products){
@@ -48,7 +48,19 @@ test("responsive and accessibility support remain present",()=>{
   assert.match(js,/aria-selected/);
 });
 test("service worker uses a stable versioned network-first strategy",()=>{
-  assert.match(sw,/ravrent-v8-20261014/);
+  assert.match(sw,/ravrent-v9-20261015/);
   assert.match(sw,/fetch\(request\)/);
   assert.doesNotMatch(sw,/unregister\(\)|clients\.navigate/);
+});
+
+test("accessible project explorer controls are present",()=>{
+ for(const id of ["directory","projectSearch","savedOnly","directoryEmpty","directoryCount","compareDialog","compareBody","launchCompare"]){
+   assert.match(html,new RegExp('id="'+id+'"'));
+ }
+ assert.match(html,/explorer\.mjs\?v=9/);
+ for(const id of products){
+   assert.match(html,new RegExp('data-save="'+id+'"'));
+   assert.match(html,new RegExp('data-compare="'+id+'"'));
+   assert.match(html,new RegExp('<a href="#'+id+'">'));
+ }
 });
