@@ -19,4 +19,18 @@ jobs:
       - name: Syntax check
         run: node --check site.js
       - name: Regression tests
-        run: node --test tests/*.test.mjs
+        run: node --test tests/site.test.mjs tests/explorer.test.mjs tests/empire.test.mjs
+      - name: Install Chromium test dependencies
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Browser interaction and responsive tests
+        run: node --test tests/browser.test.mjs
+      - name: Store browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-browser-screenshots
+          path: test-results/*.png
+          if-no-files-found: ignore
+          retention-days: 7
