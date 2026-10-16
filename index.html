@@ -12,9 +12,11 @@
   <link rel="canonical" href="https://ravrentinteractive.vercel.app/">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="/site.css?v=8">
-  <script defer src="/site.js?v=8"></script>
+  <link rel="stylesheet" href="/site.css?v=9">
+  <script defer src="/site.js?v=9"></script>
+  <script type="module" src="/explorer.mjs?v=9"></script>
   <title>Ravrent Interactive — Games and Software</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ravrent Interactive","url":"https://ravrentinteractive.vercel.app/","sameAs":["https://github.com/shepgleis-create/ravrentinteractive"]}</script>
 </head>
 <body>
   <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -24,6 +26,9 @@
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
     <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
     <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M5 3h14v18l-7-5-7 5V3Z"/></symbol>
+    <symbol id="icon-compare" viewBox="0 0 24 24"><path d="M5 4v16m0-16h6m-6 8h6m0-8v16m0-8h8m-8 8h8m0-8V4"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
     <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5 5-3Z"/></symbol>
   </svg>
 
@@ -94,13 +99,26 @@
             <p>Five projects at different stages. A practical automotive assistant, a navigation app, and three simulation and sandbox games. Explore each project and its current development status.</p>
           </div>
         </div>
-        <nav class="index" aria-label="Project index">
-          <a href="#mechanic"><span class="index-no">01</span><span class="index-title">Ravrent Mechanic<small>AUTOMOTIVE SOFTWARE</small></span><span class="index-phase">PRIVATE BETA</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-          <a href="#outmile"><span class="index-no">02</span><span class="index-title">Outmile<small>MAPS & NAVIGATION</small></span><span class="index-phase">PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-          <a href="#motor"><span class="index-no">03</span><span class="index-title">Motor Dynasty<small>AUTOMOTIVE CORPORATION SIMULATION</small></span><span class="index-phase">PLAYABLE PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-          <a href="#block"><span class="index-no">04</span><span class="index-title">Block Frontier<small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-phase">EARLY PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-          <a href="#life"><span class="index-no">05</span><span class="index-title">Life OS<small>LIFE & BUSINESS SIMULATION</small></span><span class="index-phase">IN DEVELOPMENT</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+        <div class="directory reveal" id="directory">
+  <div class="directory-top">
+    <div class="directory-field"><label for="projectSearch">Find a project</label><div class="directory-search"><svg aria-hidden="true"><use href="#icon-search"></use></svg><input id="projectSearch" type="search" placeholder="Search projects, features, systems…" autocomplete="off" maxlength="100"><kbd>/</kbd></div></div>
+    <div class="directory-groups">
+      <div class="directory-filter" role="group" aria-label="Project type"><button type="button" data-filter-kind="all" aria-pressed="true">All</button><button type="button" data-filter-kind="app" aria-pressed="false">Apps</button><button type="button" data-filter-kind="game" aria-pressed="false">Games</button></div>
+      <div class="directory-filter" role="group" aria-label="Public availability"><button type="button" data-filter-access="all" aria-pressed="true">Any stage</button><button type="button" data-filter-access="available" aria-pressed="false">Try now</button><button type="button" data-filter-access="development" aria-pressed="false">Not public</button></div>
+      <button type="button" class="directory-toggle" id="savedOnly" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg> Saved only</button>
+    </div>
+  </div>
+  <nav class="index" aria-label="Project index">
+          <div class="index-entry" data-entry="mechanic"><a href="#mechanic"><span class="index-no">01</span><span class="index-title">Ravrent Mechanic<small>AUTOMOTIVE SOFTWARE</small></span><span class="index-phase">PRIVATE BETA</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="mechanic" aria-pressed="false" aria-label="Save mechanic to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="mechanic" aria-pressed="false" aria-label="Add mechanic to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="outmile"><a href="#outmile"><span class="index-no">02</span><span class="index-title">Outmile<small>MAPS & NAVIGATION</small></span><span class="index-phase">PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="outmile" aria-pressed="false" aria-label="Save outmile to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="outmile" aria-pressed="false" aria-label="Add outmile to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="motor"><a href="#motor"><span class="index-no">03</span><span class="index-title">Motor Dynasty<small>AUTOMOTIVE CORPORATION SIMULATION</small></span><span class="index-phase">PLAYABLE PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="motor" aria-pressed="false" aria-label="Save motor to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="motor" aria-pressed="false" aria-label="Add motor to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="block"><a href="#block"><span class="index-no">04</span><span class="index-title">Block Frontier<small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-phase">EARLY PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="block" aria-pressed="false" aria-label="Save block to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="block" aria-pressed="false" aria-label="Add block to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="life"><a href="#life"><span class="index-no">05</span><span class="index-title">Life OS<small>LIFE & BUSINESS SIMULATION</small></span><span class="index-phase">IN DEVELOPMENT</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="life" aria-pressed="false" aria-label="Save life to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="life" aria-pressed="false" aria-label="Add life to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
         </nav>
+  <div id="directoryEmpty" class="directory-empty" hidden><strong>No projects match.</strong><p>Try a different search or clear the filters.</p><button type="button" id="resetEmpty">Reset filters <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button></div>
+  <div class="directory-footer"><span id="directoryCount" role="status" aria-live="polite">Showing 5 of 5 projects</span><div class="directory-footer-actions"><button type="button" id="resetFilters">Reset</button><button type="button" id="launchCompare" class="compare-launch" disabled>Compare <span id="compareCount">0</span> <svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div></div>
+  <p class="directory-footnote">Saved projects stay in this browser. Comparisons describe development stages, not performance ratings.</p>
+</div>
       </div>
     </section>
 
@@ -274,5 +292,11 @@
   </footer>
 
   <dialog id="projectDialog" aria-labelledby="modalTitle"><div id="dialogContent"></div></dialog>
+  <dialog id="compareDialog" aria-labelledby="compareTitle" class="compare-dialog">
+    <div class="compare-head"><span class="overline">PROJECT COMPARISON</span><button type="button" data-compare-close aria-label="Close comparison"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button><h2 id="compareTitle">Compare projects.</h2><p>See how selected Ravrent projects differ in purpose, stage and public access.</p></div>
+    <div id="compareBody"></div>
+    <div class="compare-actions"><button type="button" id="copyComparison" class="button button-dark">Copy summary <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button><button type="button" id="shareComparison">Copy share link <svg aria-hidden="true"><use href="#icon-external"></use></svg></button></div>
+  </dialog>
+  <div id="siteToast" role="status" aria-live="polite" class="site-toast"></div>
 </body>
 </html>
