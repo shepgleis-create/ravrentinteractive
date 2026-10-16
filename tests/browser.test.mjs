@@ -80,6 +80,7 @@ test("project brief and persistent saved project remain functional",async()=>{
   assert.equal(await page.locator("[data-entry]:visible").count(),1);
   await page.locator("#savedOnly").click();
   await page.locator('[data-project="empire"]').click();
+  await page.waitForFunction(()=>document.querySelector("#projectDialog")?.open===true);
   assert.equal(await page.locator("#projectDialog").evaluate(el=>el.open),true);
   assert.match(await page.locator("#projectDialog").innerText(),/Studio Empire/);
   assert.match(await page.locator("#projectDialog").innerText(),/Playable development build/);
