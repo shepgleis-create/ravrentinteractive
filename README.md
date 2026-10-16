@@ -10,6 +10,7 @@ The official studio website at **https://ravrentinteractive.vercel.app/**. This 
 | Outmile | Navigation | Prototype | https://ravrent-explore.vercel.app/ |
 | Motor Dynasty | Automotive simulation | Playable prototype | https://motor-eta-six.vercel.app/ |
 | Studio Empire | Game-development simulation | Playable development build | https://studio-empire-omega.vercel.app/ |
+| Server Empire | Data center tycoon | Alpha 0.1, playable | https://server-empire.vercel.app/ |
 | Block Frontier | Sandbox game | Early prototype | https://block-frontier.hatchable.site |
 | Life OS | Life/business simulation | In development | Not publicly released |
 
@@ -17,7 +18,7 @@ Private projects and internal systems are intentionally excluded from the public
 
 ## Structure
 
-- `index.html` — semantic homepage, six project sections, real public prototype links, and modal shell
+- `index.html` — semantic homepage, seven project sections, real public prototype links, and modal shell
 - `site.css` — responsive design system, product visuals, reduced-motion support
 - `site.js` — dialogs, mobile navigation, interactive studio design studies, accessibility controls
 - `icon.svg`, `manifest.webmanifest` — original app identity
@@ -56,7 +57,7 @@ No API keys are in this repository. Ravrent Mechanic is a private beta without u
 
 ## V9 project explorer (2026-10-15)
 
-The project directory supports searching six project names, descriptions and feature lists; application/game and availability filters; local-only saved projects; and two-or-three-project comparison. Comparison tables use actual development status and available prototype links, not invented product scores. Visitors can copy a summary or share a comparison URL using the compare query parameter; individual project detail dialogs support direct hash links.
+The project directory supports searching seven project names, descriptions and feature lists; application/game and availability filters; local-only saved projects; and two-or-three-project comparison. Comparison tables use actual development status and available prototype links, not invented product scores. Visitors can copy a summary or share a comparison URL using the compare query parameter; individual project detail dialogs support direct hash links.
 
 The new explorer.mjs module exports pure functions tested by tests/explorer.test.mjs. The existing site.js owns the same canonical project data and existing animated design previews. Project index links remain navigable if scripting is disabled; enhanced controls are shown only when the new module initializes.
 
@@ -71,3 +72,10 @@ Studio Empire is now included in the existing searchable catalog, local saved-pr
 
 
 **V10 verified release:** https://ravrentinteractive.vercel.app/ (existing project, READY). Browser checks and source tests passed at https://github.com/shepgleis-create/ravrentinteractive/actions/runs/38843368828. Screenshot artifacts were uploaded but have not been manually reviewed. Automatic GitHub-to-Vercel deployment remains unlinked; subsequent source pushes alone are not guaranteed to deploy.
+
+
+## V11: Server Empire (2026-10-15)
+
+Server Empire, a playable data center tycoon in Alpha 0.1, is featured as the seventh portfolio project. Its verified Vercel project is `server-empire` at https://server-empire.vercel.app/. The site catalogs its rack procurement, cooling, power, contracts, research, and four facilities. The facility viewer in `server-exhibit.mjs` is a **concept-only** visualization based on actual values in the live Server Empire `game.js`: maximum racks 4/12/30/60, upgrades $0/$85,000/$420,000/$2,100,000, power 12/42/110/275 kW and cooling 9/34/95/245 kW. Selecting a tier here never interacts with the game or saved progress.
+
+The new game is integrated with search, local saved projects, comparison, shareable project links and structured site metadata. `tests/server.test.mjs` and the extended Chromium tests validate the integration, including narrow-screen overflow checks. No separate copy of the game or duplicate Vercel website was created. Automatic Git deployments for the *studio website* remain unconfigured until the existing project is linked in Settings → Git.
