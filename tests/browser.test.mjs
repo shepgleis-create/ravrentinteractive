@@ -36,9 +36,9 @@ async function pageAt(width,height){
 }
 test("desktop project directory, filter and compare flow",async()=>{
   const {page,errors}=await pageAt(1440,900);
-  assert.equal(await page.locator("[data-entry]").count(),6);
+  assert.equal(await page.locator("[data-entry]").count(),7);
   await page.locator('[data-filter-kind="game"]').click();
-  assert.equal(await page.locator("[data-entry]:visible").count(),4);
+  assert.equal(await page.locator("[data-entry]:visible").count(),5);
   await page.locator('[data-filter-kind="all"]').click();
   await page.locator('#projectSearch').fill("game development");
   assert.equal(await page.locator("[data-entry]:visible").count(),1);
@@ -98,5 +98,36 @@ test("small mobile viewport has working navigation without horizontal overflow",
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
   assert.ok(overflow<=2,"horizontal overflow "+overflow+" px");
   assert.equal(errors.length,0,errors.join("\n"));
+  await page.close();
+});
+
+test("Server Empire facility selector updates real capacity and unlock specifications",async()=>{
+  const {page,errors}=await pageAt(1280,850);
+  await page.locator("#server").scrollIntoViewIfNeeded();
+  await page.locator('[data-facility="4"]').click();
+  assert.equal(await page.locator("#serverFacilityName").innerText(),"Hyperscale Empire");
+  assert.equal(await page.locator("#serverRackMax").innerText(),"60");
+  assert.equal(await page.locator("#serverPower").innerText(),"275 kW");
+  assert.match(await page.locator("#serverBuildCost").innerText(),/\$2,100,000/);
+  assert.match(await page.locator("#serverUnlock").innerText(),/Day 180/);
+  assert.equal(await page.locator("#serverDiagram").getAttribute("data-tier"),"4");
+  await page.locator('[data-facility="4"]').press("ArrowLeft");
+  assert.equal(await page.locator("#serverFacilityName").innerText(),"Data Center Campus");
+  assert.equal(await page.locator("#serverRackMax").innerText(),"30");
+  await page.locator('[data-facility="1"]').click();
+  assert.equal(await page.locator("#serverRackGrid .server-rack").count(),4);
+  assert.equal(await page.locator('#server a[href="https://server-empire.vercel.app/"]').getAttribute("target"),"_blank");
+  assert.equal(errors.length,0,errors.join("\n"));
+  await page.screenshot({path:resolve(root,"test-results","server-desktop.png"),fullPage:true,animations:"disabled"});
+  await page.close();
+});
+test("Server Empire stays usable at narrow phone width with no horizontal overflow",async()=>{
+  const {page,errors}=await pageAt(320,690);
+  await page.locator("#server").scrollIntoViewIfNeeded();
+  await page.locator('[data-facility="2"]').click();
+  assert.equal(await page.locator("#serverRackMax").innerText(),"12");
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=2);
+  assert.equal(errors.length,0,errors.join("\n"));
+  await page.screenshot({path:resolve(root,"test-results","server-mobile.png"),fullPage:true,animations:"disabled"});
   await page.close();
 });
