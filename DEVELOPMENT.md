@@ -58,9 +58,9 @@ GitHub Actions run: https://github.com/shepgleis-create/ravrentinteractive/actio
 - [x] Build original responsive four-tier facility viewer with verified rack, power, cooling, upgrade and unlock figures
 - [x] Keep private projects hidden and clearly mark visuals as not actual gameplay
 - [x] Extend Node and Chromium tests for all seven projects and narrow mobile breakpoints
-- [ ] Confirm latest complete V11 test suite passes and screenshot artifacts are generated
-- [ ] Deploy V11 to original Ravrent Interactive production project and confirm live URL/assets
-- [ ] Manually inspect full-page browser screenshots for visual polish
+- [x] GitHub Actions V11 Node tests and Chromium browser tests passed; four screenshot captures uploaded (run 38844519630)
+- [x] V11 deployed to existing Ravrent Interactive production project, READY and aliases correct (dpl_65cYG7fdbrVPgQYNxoeXHY1ZnAuC); six live responses HTTP 200
+- [x] Inspected four desktop/mobile screenshots from CI; no layout-breaking overlap was observed. Device/assistive-tech manual testing remains pending
 - [ ] Resolve existing project Git integration without creating duplicate deployment
 
 ### V11 next development priorities
@@ -68,3 +68,6 @@ GitHub Actions run: https://github.com/shepgleis-create/ravrentinteractive/actio
 - Genuine change journal with verified release histories and ownership controls
 - Additional accessibility, performance-budget and security audits on real devices
 - Source repository setup for Server Empire if a corresponding GitHub repository is needed; none was identified in linked GitHub repositories during the V11 inventory
+
+### V11 release verification record
+CI source tests and browser tests: https://github.com/shepgleis-create/ravrentinteractive/actions/runs/38844519630 (passed). Screenshots: desktop, mobile, Server Empire desktop, Server Empire at 320px; inspected. Production: https://ravrentinteractive.vercel.app/ and deployment dpl_65cYG7fdbrVPgQYNxoeXHY1ZnAuC (READY, no alias error). Live homepage and /server-exhibit.mjs?v=11, /site.js?v=11, /explorer.mjs?v=11, /site.css?v=11 and /sw.js all returned HTTP 200 and expected V11 markers. Git link remains null on the Vercel project. Real iPhone Safari and screen-reader testing remain unperformed.
