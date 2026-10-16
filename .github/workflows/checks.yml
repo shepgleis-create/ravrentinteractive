@@ -19,4 +19,4 @@ jobs:
       - name: Syntax check
         run: node --check site.js
       - name: Regression tests
-        run: node --test tests/site.test.mjs
+        run: node --test tests/*.test.mjs
