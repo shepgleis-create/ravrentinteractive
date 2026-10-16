@@ -211,7 +211,7 @@ function switchRoute(mode){
   $$("[data-map-route]").forEach(b=>{const on=b.dataset.mapRoute===mode;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
   cancelAnimationFrame(mapFrame);mapPaint(mapPrevious)
 }
-$("[data-map-route]").forEach(b=>b.addEventListener("click",()=>switchRoute(b.dataset.mapRoute)));
+$$("[data-map-route]").forEach(b=>b.addEventListener("click",()=>switchRoute(b.dataset.mapRoute)));
 $("#mapPause").addEventListener("click",()=>{
   playMap=!playMap;const btn=$("#mapPause");
   btn.setAttribute("aria-label",playMap?"Pause map animation":"Play map animation");btn.innerHTML=symbol(playMap?"pause":"play");
