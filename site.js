@@ -157,7 +157,7 @@ const mapRoutes={
   scenic:[[.09,.83],[.18,.71],[.29,.76],[.38,.49],[.52,.52],[.64,.35],[.75,.37],[.88,.19]],
   trail:[[.13,.86],[.2,.63],[.18,.44],[.37,.43],[.42,.64],[.61,.48],[.7,.27],[.86,.19]]
 };
-let mapW=1,mapH=1,routeMode="scenic",playMap=!reduce.matches,mapElapsed=0,mapPrevious=0,mapFrame=0;
+let mapW=1,mapH=1,routeMode="scenic",playMap=!reduce.matches,mapElapsed=0,mapPrevious=0,mapFrame=0,mapVisible=true;
 function resizeMap(){
   const r=terrain.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);
   if(!r.width||!r.height)return;
@@ -197,7 +197,7 @@ function mapPaint(time){
   c.beginPath();c.arc(x,y,6,0,Math.PI*2);c.fillStyle="#245e4f";c.fill();
   c.fillStyle="#617a66";c.font="600 10px system-ui";
   c.fillText("RIDGE LOOP",w*.44,h*.21);c.fillText("VALLEY PASS",w*.12,h*.42);
-  if(playMap&&!document.hidden)mapFrame=requestAnimationFrame(mapPaint);
+  if(playMap&&!document.hidden&&mapVisible)mapFrame=requestAnimationFrame(mapPaint);
 }
 function switchRoute(mode){
   if(!mapRoutes[mode])return;routeMode=mode;mapElapsed=0;mapPrevious=performance.now();
@@ -215,7 +215,7 @@ new ResizeObserver(()=>{resizeMap();cancelAnimationFrame(mapFrame);mapPaint(perf
 resizeMap();mapPaint(performance.now());
 
 const heroCanvas=$("#heroCanvas"),hc=heroCanvas.getContext("2d",{alpha:true});
-let hW=1,hH=1,heroFrame=0,mouse={x:.5,y:.5};
+let hW=1,hH=1,heroFrame=0,heroVisible=true,mouse={x:.5,y:.5};
 function resizeHero(){
   const rect=heroCanvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);
   if(!rect.width||!rect.height)return;
@@ -237,7 +237,7 @@ function paintHero(t){
     c.beginPath();c.arc(cx+Math.cos(angle)*rr,cy+Math.sin(angle)*rr*.7,i%9===0?1.8:.8,0,Math.PI*2);
     c.fillStyle=i%9===0?"rgba(204,224,244,.65)":"rgba(163,192,223,.22)";c.fill()
   }
-  if(!reduce.matches&&!document.hidden)heroFrame=requestAnimationFrame(paintHero)
+  if(!reduce.matches&&!document.hidden&&heroVisible)heroFrame=requestAnimationFrame(paintHero)
 }
 heroCanvas.addEventListener("pointermove",e=>{
   if(reduce.matches)return;const b=heroCanvas.getBoundingClientRect();
@@ -245,6 +245,21 @@ heroCanvas.addEventListener("pointermove",e=>{
 },{passive:true});
 new ResizeObserver(()=>{resizeHero();cancelAnimationFrame(heroFrame);paintHero(0)}).observe(heroCanvas);
 resizeHero();paintHero(0);
+if("IntersectionObserver" in window){
+  const visibility=new IntersectionObserver(entries=>{
+    for(const entry of entries){
+      if(entry.target===terrain){
+        mapVisible=entry.isIntersecting;cancelAnimationFrame(mapFrame);
+        mapPrevious=performance.now();if(mapVisible&&!document.hidden)mapPaint(mapPrevious);
+      }
+      if(entry.target===heroCanvas){
+        heroVisible=entry.isIntersecting;cancelAnimationFrame(heroFrame);
+        if(heroVisible&&!document.hidden)paintHero(performance.now());
+      }
+    }
+  },{rootMargin:"65px"});
+  visibility.observe(terrain);visibility.observe(heroCanvas);
+}
 
 document.addEventListener("visibilitychange",()=>{
   cancelAnimationFrame(mapFrame);cancelAnimationFrame(heroFrame);
