@@ -64,3 +64,10 @@ test("accessible project explorer controls are present",()=>{
    assert.match(html,new RegExp('<a href="#'+id+'">'));
  }
 });
+
+test("decorative canvases stop background rendering offscreen",()=>{
+  assert.match(js,/mapVisible=entry\.isIntersecting/);
+  assert.match(js,/heroVisible=entry\.isIntersecting/);
+  assert.match(js,/visibility\.observe\(terrain\)/);
+  assert.match(js,/visibility\.observe\(heroCanvas\)/);
+});
