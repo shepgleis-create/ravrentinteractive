@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0a0d14">
-  <meta name="description" content="Ravrent Interactive develops games, simulations and practical software. Explore Motor Dynasty, Life OS, Block Frontier, Outmile, and Ravrent Mechanic.">
+  <meta name="description" content="Ravrent Interactive develops games, simulations and practical software. Explore Studio Empire, Motor Dynasty, Life OS, Block Frontier, Outmile, and Ravrent Mechanic.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ravrent Interactive — Games and Software">
   <meta property="og:description" content="An independent studio creating automotive software, navigation experiences and deep simulation games.">
@@ -12,9 +12,10 @@
   <link rel="canonical" href="https://ravrentinteractive.vercel.app/">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="/site.css?v=9">
-  <script defer src="/site.js?v=9"></script>
-  <script type="module" src="/explorer.mjs?v=9"></script>
+  <link rel="stylesheet" href="/site.css?v=10">
+  <script defer src="/site.js?v=10"></script>
+  <script type="module" src="/explorer.mjs?v=10"></script>
+  <script type="module" src="/empire-exhibit.mjs?v=10"></script>
   <title>Ravrent Interactive — Games and Software</title>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ravrent Interactive","url":"https://ravrentinteractive.vercel.app/","sameAs":["https://github.com/shepgleis-create/ravrentinteractive"]}</script>
 </head>
@@ -44,7 +45,7 @@
         <a href="#projects">Projects</a>
         <a href="#mechanic">Mechanic</a>
         <a href="#outmile">Outmile</a>
-        <a href="#games">Games</a>
+        <a href="#empire">Games</a>
         <a href="#studio">Studio</a>
       </nav>
       <a class="header-cta" href="#projects">Our work <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
@@ -54,7 +55,7 @@
       <a href="#projects">All projects <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
       <a href="#mechanic">Ravrent Mechanic <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
       <a href="#outmile">Outmile <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-      <a href="#games">Games <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      <a href="#empire">Games <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
       <a href="#studio">The studio <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
     </nav>
   </header>
@@ -70,7 +71,7 @@
             <a href="#projects" class="button button-primary">Explore the projects <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
             <a href="#studio" class="button button-outline">About Ravrent <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
           </div>
-          <div class="hero-footnote"><span></span> FIVE PROJECTS · TWO APPS · THREE GAMES</div>
+          <div class="hero-footnote"><span></span> SIX PROJECTS · TWO APPS · FOUR GAMES</div>
         </div>
         <div class="hero-art" aria-label="Decorative animated technical line art">
           <canvas id="heroCanvas" aria-hidden="true"></canvas>
@@ -96,7 +97,7 @@
           <span class="overline">01 / PORTFOLIO</span>
           <div>
             <h2 id="projectsTitle">The work, <span>in focus.</span></h2>
-            <p>Five projects at different stages. A practical automotive assistant, a navigation app, and three simulation and sandbox games. Explore each project and its current development status.</p>
+            <p>Six projects at different stages. Two practical applications and four games spanning automotive strategy, studio management, sandbox creation and life simulation. Explore each project and its current development status.</p>
           </div>
         </div>
         <div class="directory reveal" id="directory">
@@ -112,11 +113,12 @@
           <div class="index-entry" data-entry="mechanic"><a href="#mechanic"><span class="index-no">01</span><span class="index-title">Ravrent Mechanic<small>AUTOMOTIVE SOFTWARE</small></span><span class="index-phase">PRIVATE BETA</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="mechanic" aria-pressed="false" aria-label="Save mechanic to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="mechanic" aria-pressed="false" aria-label="Add mechanic to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
           <div class="index-entry" data-entry="outmile"><a href="#outmile"><span class="index-no">02</span><span class="index-title">Outmile<small>MAPS & NAVIGATION</small></span><span class="index-phase">PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="outmile" aria-pressed="false" aria-label="Save outmile to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="outmile" aria-pressed="false" aria-label="Add outmile to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
           <div class="index-entry" data-entry="motor"><a href="#motor"><span class="index-no">03</span><span class="index-title">Motor Dynasty<small>AUTOMOTIVE CORPORATION SIMULATION</small></span><span class="index-phase">PLAYABLE PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="motor" aria-pressed="false" aria-label="Save motor to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="motor" aria-pressed="false" aria-label="Add motor to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
-          <div class="index-entry" data-entry="block"><a href="#block"><span class="index-no">04</span><span class="index-title">Block Frontier<small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-phase">EARLY PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="block" aria-pressed="false" aria-label="Save block to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="block" aria-pressed="false" aria-label="Add block to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
-          <div class="index-entry" data-entry="life"><a href="#life"><span class="index-no">05</span><span class="index-title">Life OS<small>LIFE & BUSINESS SIMULATION</small></span><span class="index-phase">IN DEVELOPMENT</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="life" aria-pressed="false" aria-label="Save life to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="life" aria-pressed="false" aria-label="Add life to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="empire"><a href="#empire"><span class="index-no">04</span><span class="index-title">Studio Empire<small>GAME DEVELOPMENT SIMULATOR</small></span><span class="index-phase">PLAYABLE DEVELOPMENT BUILD</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="empire" aria-pressed="false" aria-label="Save Studio Empire to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="empire" aria-pressed="false" aria-label="Add Studio Empire to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="block"><a href="#block"><span class="index-no">05</span><span class="index-title">Block Frontier<small>BLOCK-BASED SANDBOX GAME</small></span><span class="index-phase">EARLY PROTOTYPE</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="block" aria-pressed="false" aria-label="Save block to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="block" aria-pressed="false" aria-label="Add block to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
+          <div class="index-entry" data-entry="life"><a href="#life"><span class="index-no">06</span><span class="index-title">Life OS<small>LIFE & BUSINESS SIMULATION</small></span><span class="index-phase">IN DEVELOPMENT</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a><button type="button" class="directory-control" data-save="life" aria-pressed="false" aria-label="Save life to saved projects" title="Save project"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg></button><button type="button" class="directory-control" data-compare="life" aria-pressed="false" aria-label="Add life to comparison" title="Select for comparison"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div>
         </nav>
   <div id="directoryEmpty" class="directory-empty" hidden><strong>No projects match.</strong><p>Try a different search or clear the filters.</p><button type="button" id="resetEmpty">Reset filters <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button></div>
-  <div class="directory-footer"><span id="directoryCount" role="status" aria-live="polite">Showing 5 of 5 projects</span><div class="directory-footer-actions"><button type="button" id="resetFilters">Reset</button><button type="button" id="launchCompare" class="compare-launch" disabled>Compare <span id="compareCount">0</span> <svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div></div>
+  <div class="directory-footer"><span id="directoryCount" role="status" aria-live="polite">Showing 6 of 6 projects</span><div class="directory-footer-actions"><button type="button" id="resetFilters">Reset</button><button type="button" id="launchCompare" class="compare-launch" disabled>Compare <span id="compareCount">0</span> <svg aria-hidden="true"><use href="#icon-compare"></use></svg></button></div></div>
   <p class="directory-footnote">Saved projects stay in this browser. Comparisons describe development stages, not performance ratings.</p>
 </div>
       </div>
@@ -219,10 +221,67 @@
       </div>
     </section>
 
+
+    <section class="empire-feature" id="empire" aria-labelledby="empireTitle">
+      <div class="container">
+        <header class="empire-heading reveal">
+          <span class="overline">05 / GAME DEVELOPMENT SIMULATION</span>
+          <div class="empire-heading-grid">
+            <div>
+              <h2 id="empireTitle">Start small.<br><em>Build an empire.</em></h2>
+            </div>
+            <div class="empire-summary">
+              <p><strong>Studio Empire</strong> puts you in charge of a growing game-development business. Begin in a garage, develop and release games, hire people, negotiate with publishers and earn the money to expand your studio.</p>
+              <div class="empire-ctas">
+                <a class="button button-primary" href="https://studio-empire-omega.vercel.app/" target="_blank" rel="noopener noreferrer">Play development build <svg aria-hidden="true"><use href="#icon-external"></use></svg></a>
+                <button type="button" class="empire-details" data-project="empire">Game details <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="empire-exhibit reveal" id="empireExhibit">
+          <div class="empire-exhibit-top"><span>STUDIO PROGRESSION / FOUR OFFICE LEVELS</span><span>INTERACTIVE DESIGN EXHIBIT</span></div>
+          <div class="empire-body">
+            <div class="empire-render" id="empireArt" data-level="1" role="img" aria-label="Illustrative garage office, not actual gameplay footage">
+              <div class="empire-architecture" aria-hidden="true">
+                <div class="empire-light"></div><div class="empire-floor"></div>
+                <div class="empire-back-wall"><i></i><i></i><i></i></div>
+                <div class="empire-left-wall"></div>
+                <div class="empire-desk desk-left"><span></span></div>
+                <div class="empire-desk desk-right"><span></span></div>
+                <div class="empire-desk desk-back"><span></span></div>
+                <div class="empire-desk desk-forward"><span></span></div>
+                <div class="empire-plants"><i></i><i></i></div>
+              </div>
+              <div class="empire-hud">
+                <span>OFFICE LEVEL <strong id="empireLevel">01 / 04</strong></span>
+                <span>ILLUSTRATIVE ENVIRONMENT</span>
+              </div>
+            </div>
+            <div class="empire-side">
+              <span class="overline">THE GROWTH PATH</span>
+              <h3 id="empireOffice">Garage Studio</h3>
+              <p id="empireDescription">One founder, a small garage and a handful of desks. Your company starts here.</p>
+              <div class="empire-metrics"><div><span>OFFICE COST</span><strong id="empireCost">Starting office</strong></div><div><span>TEAM CAPACITY</span><strong id="empireCapacity">4 staff capacity</strong></div></div>
+              <div class="empire-tier-tabs" role="tablist" aria-label="Select a Studio Empire office tier">
+                <button type="button" data-empire-tier="1" class="active" role="tab" aria-selected="true" aria-controls="empireOffice">01 <span>Garage</span></button>
+                <button type="button" data-empire-tier="2" role="tab" aria-selected="false" aria-controls="empireOffice">02 <span>Rented</span></button>
+                <button type="button" data-empire-tier="3" role="tab" aria-selected="false" aria-controls="empireOffice">03 <span>Loft</span></button>
+                <button type="button" data-empire-tier="4" role="tab" aria-selected="false" aria-controls="empireOffice">04 <span>Campus</span></button>
+              </div>
+              <p class="empire-disclaimer">Prices and staffing caps reflect the current game build. Select a level here to inspect it; actual upgrades must be purchased during gameplay. Artwork is an original stylized concept, not a gameplay screenshot.</p>
+            </div>
+          </div>
+        </div>
+        <div class="empire-points reveal"><span>RELEASE GAMES</span><span>HIRE DEVELOPERS</span><span>RESEARCH TECHNOLOGY</span><span>MANAGE FINANCES</span><span>GROW YOUR HQ</span></div>
+      </div>
+    </section>
+
     <section class="games section-space" id="games" aria-labelledby="gamesTitle">
       <div class="container">
         <div class="games-head reveal">
-          <span class="overline">05 / MORE WORLDS</span>
+          <span class="overline">06 / MORE WORLDS</span>
           <h2 id="gamesTitle">Beyond the ordinary.</h2>
           <p>Two different kinds of simulation and creativity: a block-based sandbox and an evolving life-and-business world.</p>
         </div>
@@ -262,12 +321,12 @@
     <section class="studio section-space" id="studio" aria-labelledby="studioTitle">
       <div class="container">
         <div class="studio-grid reveal">
-          <div><span class="overline" style="color:#738ba2">06 / ABOUT THE STUDIO</span><h2 id="studioTitle">Focused on<br><span>the experience.</span></h2></div>
+          <div><span class="overline" style="color:#738ba2">07 / ABOUT THE STUDIO</span><h2 id="studioTitle">Focused on<br><span>the experience.</span></h2></div>
           <div class="studio-copy"><p>Ravrent Interactive is an independent game and software studio. Our projects span complex simulations, practical automotive assistance and navigation. We work to make ambitious systems easier to understand, use and explore.</p><p>Every project listed here is in development. We distinguish currently playable prototypes from private betas and planned functionality.</p></div>
         </div>
         <div class="studio-stat reveal">
-          <div><strong>05</strong><small>PROJECTS</small></div>
-          <div><strong>03</strong><small>GAMES</small></div>
+          <div><strong>06</strong><small>PROJECTS</small></div>
+          <div><strong>04</strong><small>GAMES</small></div>
           <div><strong>02</strong><small>APPLICATIONS</small></div>
         </div>
       </div>
