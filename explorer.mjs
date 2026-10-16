@@ -1,7 +1,7 @@
 // Ravrent Interactive project catalog and comparison utilities.
 // Pure exported helpers are exercised by Node tests; browser UI is progressive enhancement.
-const IDS=["mechanic","outmile","motor","block","life"];
-const GROUP={mechanic:"app",outmile:"app",motor:"game",block:"game",life:"game"};
+const IDS=["mechanic","outmile","motor","empire","block","life"];
+const GROUP={mechanic:"app",outmile:"app",motor:"game",empire:"game",block:"game",life:"game"};
 const STORE="ravrent-studio-saved-v1";
 export function normalizeSaved(values){
   return Array.isArray(values)?[...new Set(values.filter(id=>IDS.includes(id)))]:[];
@@ -67,7 +67,7 @@ function startExplorer(){
       b.disabled=!on&&state.comparison.length===3;
     });
     $("#directoryEmpty").hidden=visible.length>0;
-    $("#directoryCount").textContent="Showing "+visible.length+" of 5 projects";
+    $("#directoryCount").textContent="Showing "+visible.length+" of 6 projects";
     $("#compareCount").textContent=String(state.comparison.length);
     $("#launchCompare").disabled=state.comparison.length<2;
   }
