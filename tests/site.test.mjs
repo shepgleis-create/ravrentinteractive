@@ -75,8 +75,8 @@ test("decorative canvases stop background rendering offscreen",()=>{
 test("Studio Empire uses real gameplay link and four labeled office tiers",()=>{
   assert.match(html,/id="empireExhibit"/);
   assert.match(html,/empire-exhibit\.mjs\?v=11/);
-  assert.match(html,/SIX PROJECTS/);
-  assert.match(html,/FOUR GAMES/);
+  assert.match(html,/SEVEN PROJECTS/);
+  assert.match(html,/FIVE GAMES/);
   for(let tier=1;tier<=4;tier++)assert.match(html,new RegExp('data-empire-tier="'+tier+'"'));
   assert.match(html,/Prices and staffing caps reflect the current game build/);
   assert.match(css,/\.empire-render\[data-level="4"\]/);
