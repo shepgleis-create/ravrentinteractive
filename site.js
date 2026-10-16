@@ -38,6 +38,7 @@ const projects = {
     note:"No verified public release link is available at this time."
   }
 };
+window.RavrentProjects=Object.freeze(projects);
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
 const symbol = name=>'<svg aria-hidden="true"><use href="#icon-'+name+'"></use></svg>';
@@ -54,7 +55,7 @@ function showProject(id){
     '<ul class="feature-bullets">'+p.points.map(x=>'<li>'+x+'</li>').join("")+'</ul></div>'+
     '<aside class="modal-aside"><span class="overline">Project status</span><strong>'+p.phase+'</strong>'+
     (p.link?'<a class="button button-dark" href="'+p.link+'" target="_blank" rel="noopener noreferrer">Open the prototype '+symbol("external")+'</a>':'<span class="no-public-link">Not publicly available</span>')+
-    '<p>'+p.note+'</p></aside></div>';
+    '<p>'+p.note+'</p><button type="button" class="modal-copy" id="copyProjectLink">Copy project link '+symbol("external")+'</button></aside></div>';
   if(!dialog.open)dialog.showModal();
   document.body.classList.add("modal-open");
   document.title=p.name+" — Ravrent Interactive";
@@ -72,6 +73,11 @@ function processHash(){
 window.addEventListener("hashchange",processHash);
 dialog.addEventListener("close",closeProject);
 document.addEventListener("click",e=>{
+  if(e.target.closest("#copyProjectLink")){
+    const id=location.hash.match(/^#project\/(mechanic|outmile|motor|block|life)$/)?.[1];
+    if(id&&typeof window.copyProjectUrl==="function")window.copyProjectUrl(id);
+    return;
+  }
   if(e.target.closest("[data-close-modal]"))closeProject();
   const el=e.target.closest("[data-project]");if(el){location.hash="project/"+el.dataset.project}
 });
