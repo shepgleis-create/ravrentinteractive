@@ -17,9 +17,13 @@ jobs:
         with:
           node-version: '22'
       - name: Syntax check
-        run: node --check site.js
+        run: |
+          node --check site.js
+          node --check explorer.mjs
+          node --check empire-exhibit.mjs
+          node --check server-exhibit.mjs
       - name: Regression tests
-        run: node --test tests/site.test.mjs tests/explorer.test.mjs tests/empire.test.mjs
+        run: node --test tests/site.test.mjs tests/explorer.test.mjs tests/empire.test.mjs tests/server.test.mjs
       - name: Install Chromium test dependencies
         run: |
           npm install --no-save playwright@1.56.1
