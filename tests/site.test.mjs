@@ -81,3 +81,8 @@ test("Studio Empire uses real gameplay link and four labeled office tiers",()=>{
   assert.match(html,/Prices and staffing caps reflect the current game build/);
   assert.match(css,/\.empire-render\[data-level="4"\]/);
 });
+
+test("route selector initialization uses querySelectorAll for iterated listeners",()=>{
+ assert.match(js,/\$\$\("\[data-map-route\]"\)\.forEach\(b=>b\.addEventListener/);
+ assert.doesNotMatch(js,/(?<!\$)\$\("\[data-map-route\]"\)\.forEach\(b=>b\.addEventListener/);
+});
