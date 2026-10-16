@@ -24,14 +24,21 @@ const projects = {
     note:"The engineering diagram on this page is original illustrative artwork, not an in-game capture."
   },
   block:{
-    number:"04",name:"Block Frontier",kind:"Sandbox game",phase:"Early prototype",
+    number:"05",name:"Block Frontier",kind:"Sandbox game",phase:"Early prototype",
     description:"A block-based sandbox game in development, with terrain, building, mining and creative exploration.",
     points:["Voxel world and terrain systems","Block mining and construction","Exploration and survival experiments","Continued mechanics and visual refinement"],
     link:"https://block-frontier.hatchable.site",
     note:"The geometric animation is an original concept visualization, not actual gameplay footage."
   },
+  empire:{
+    number:"04",name:"Studio Empire",kind:"Game development simulation",phase:"Playable development build",
+    description:"Start as a solo game creator in a garage and grow into a staffed studio. Create and release games, hire developers, research technology, make publisher deals, and purchase real in-game office upgrades as the company grows.",
+    points:["Four purchasable office locations with different capacities","Playable game creation, releases and reviews","Hiring, finances, publishers, rivals and research","Animated staff and 3D-inspired office environments"],
+    link:"https://studio-empire-omega.vercel.app/",
+    note:"Verified development build from the Studio-Empire repository, version v0.8. Office upgrades are purchased using in-game funds; this website's office exhibit is illustrative and does not edit your actual game save."
+  },
   life:{
-    number:"05",name:"Life OS",kind:"Life and business simulation",phase:"In development",
+    number:"06",name:"Life OS",kind:"Life and business simulation",phase:"In development",
     description:"An evolving simulation of companies, decisions, economics and player progression.",
     points:["Running companies and creating businesses","Economic and financial decisions","Connected systems and player choice","Interface and gameplay rework"],
     link:null,
@@ -67,14 +74,14 @@ function closeProject(){
   if(location.hash.startsWith("#project/"))history.replaceState(null,"","#projects");
 }
 function processHash(){
-  const found=location.hash.match(/^#project\/(mechanic|outmile|motor|block|life)$/);
+  const found=location.hash.match(/^#project\/(mechanic|outmile|motor|empire|block|life)$/);
   if(found)showProject(found[1]);else if(dialog.open)closeProject();
 }
 window.addEventListener("hashchange",processHash);
 dialog.addEventListener("close",closeProject);
 document.addEventListener("click",e=>{
   if(e.target.closest("#copyProjectLink")){
-    const id=location.hash.match(/^#project\/(mechanic|outmile|motor|block|life)$/)?.[1];
+    const id=location.hash.match(/^#project\/(mechanic|outmile|motor|empire|block|life)$/)?.[1];
     if(id&&typeof window.copyProjectUrl==="function")window.copyProjectUrl(id);
     return;
   }
@@ -107,7 +114,7 @@ if("IntersectionObserver" in window){
       $$(".nav-links a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+id?"location":"false"))
     }
   },{rootMargin:"-25% 0px -65% 0px"});
-  ["projects","mechanic","outmile","games","studio"].forEach(id=>{const el=document.getElementById(id);if(el)navigation.observe(el)})
+  ["projects","mechanic","outmile","empire","games","studio"].forEach(id=>{const el=document.getElementById(id);if(el)navigation.observe(el)})
 }else $$(".reveal").forEach(n=>n.classList.add("is-shown"));
 
 const mechanicViews={
