@@ -118,6 +118,7 @@ function startExplorer(){
     if(e.key==="/"&&!typing&&!dialog.open&&!$("#projectDialog").open){e.preventDefault();$("#projectSearch").focus()}
     if(e.key==="Escape"&&el===$("#projectSearch")){el.value="";state.query="";draw();el.blur()}
   });
+  document.documentElement.classList.add("explorer-ready");
   const fromUrl=new URLSearchParams(location.search).get("compare");
   if(fromUrl){const ids=normalizeSaved(fromUrl.split(",")).slice(0,3);if(ids.length>=2){state.comparison=ids;showComparison()}}
   draw();
